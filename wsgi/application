@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'training.settings'
+sys.path.append(os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi',
+                             'training'))
+VIRTENV = os.path.join(os.environ['OPENSHIFT_PYTHON_DIR'], 'virtenv')
+os.environ['PYTHON_EGG_CACHE'] = os.path.join(VIRTENV, 'lib', 'python2.7',
+                                              'site-packages')
+virtualenv = os.path.join(VIRTENV, 'bin/activate_this.py')
+try:
+    execfile(virtualenv, dict(__file__=virtualenv))
+except:
+    pass
+
+import django
+django.setup()
+application = django.core.handlers.wsgi.WSGIHandler()

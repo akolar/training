@@ -1,10 +1,11 @@
 from setuptools import setup
 
-setup(name='YourAppName',
-      version='1.0',
-      description='OpenShift App',
-      author='Your Name',
-      author_email='example@example.com',
+setup(name='Training planer',
+      version='0.1',
+      description='Plan your training and track the progress.',
+      author='Anze Kolar',
+      author_email='me@akolar.com',
       url='http://www.python.org/sigs/distutils-sig/',
-#      install_requires=['Django>=1.3'],
-     )
+      install_requires=[
+          'Django>=1.7'],
+      )
