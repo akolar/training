@@ -7,22 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" src="{% static img/favicon.ico %}">
+    <link rel="icon" src="{% static 'img/favicon.ico' %}">
 
-    <title>{{ title }}</title>
+    <title>{% block block_title %}{{ title }}{% endblock block_title %}</title>
 
-    {% include base/css.html %}
+    {% include 'base/css.html' %}
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    {% block head_extra %}{% endblock head_extra %}
   </head>
 
-  <body>
-    {% block body %}
+  {% block body %}
+    <body>
 
-    {% endblock body %}
-  </body>
-  {% include base/scripts.html %}
+    </body>
+  {% endblock body %}
+
+  {% include 'base/scripts.html' %}
+  {% block foot_extra %}{% endblock foot_extra %}
 </html>

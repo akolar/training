@@ -1,0 +1,32 @@
+{% extends "layouts/full-width.html" %}
+
+{% load i18n %}
+{% load url from future %}
+
+{% block head_title %}{% trans 'Training :: Sign in' %}{% endblock %}
+
+{% block content %}
+  <form class="form-signin" role="form" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+
+    <h3 class="form-signin-heading">{% trans 'Sign in' %}</h3>
+
+    <a class="btn btn-block btn-social btn-google-plus" href="http://127.0.0.1:8000/accounts/google/login/?process=login">
+      <i class="fa fa-google"></i> {% trans 'Sign in with Google' %}
+    </a>
+    <a class="btn btn-block btn-social btn-facebook" href="http://127.0.0.1:8000/accounts/facebook/login/?process=login">
+      <i class="fa fa-facebook"></i> {% trans 'Sign in with Facebook' %}
+    </a>
+
+    <span class="login-or center-block center">&mdash; {% trans 'or' %} &mdash;</span>
+
+    <input type="email" class="form-control" placeholder="{% trans 'Email address' %}" id="id_username" name="username" required autofocus>
+    <input type="password" class="form-control" placeholder="{% trans 'Password' %}" id="id_password" name="password" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign in' %}</button>
+
+    <hr class="divider">
+
+    <span class="login-note">{% trans "Don't have an account?" %} <a href="/accounts/signup">{% trans 'Sign up' %}</a>.</span>
+    <span class="login-note"><a href="/accounts/password/reset">{% trans 'Forgot your password?' %}</a></span>
+  </form>
+{% endblock content %}
