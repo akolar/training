@@ -14,10 +14,10 @@
 
     <h3 class="form-signin-heading">{% trans 'Sign up' %}</h3>
 
-    <a class="btn btn-block btn-social btn-google-plus" href="http://127.0.0.1:8000/accounts/google/login/?process=login">
+    <a class="btn btn-block btn-social btn-google-plus" href="{% url 'google_login' %}">
       <i class="fa fa-google"></i> {% trans 'Sign up with Google' %}
     </a>
-    <a class="btn btn-block btn-social btn-facebook" href="http://127.0.0.1:8000/accounts/facebook/login/?process=login">
+    <a class="btn btn-block btn-social btn-facebook" href="{% url 'facebook_login' %}">
       <i class="fa fa-facebook"></i> {% trans 'Sign up with Facebook' %}
     </a>
 
