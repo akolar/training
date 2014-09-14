@@ -1,0 +1,20 @@
+.nav-settings li a {
+    display: block;
+    padding: 4px 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+.nav-settings li a:hover {
+    color: $color_main;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.nav-settings li.active a {
+    padding-left: 18px;
+    font-weight: 700;
+    color: $color_main;
+    background-color: transparent;
+    border-left: 2px solid $color_main;
+}

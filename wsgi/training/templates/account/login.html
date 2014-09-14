@@ -8,6 +8,9 @@
 {% block content %}
   <form class="form-signin" role="form" method="POST" action="{% url 'account_login' %}">
     {% csrf_token %}
+    {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
 
     <h3 class="form-signin-heading">{% trans 'Sign in' %}</h3>
 
@@ -20,7 +23,8 @@
 
     <span class="login-or center-block center">&mdash; {% trans 'or' %} &mdash;</span>
 
-    <input type="email" class="form-control" placeholder="{% trans 'Email address' %}" id="id_username" name="username" required autofocus>
+    {{ form.errors }}
+    <input type="email" class="form-control" placeholder="{% trans 'Email address' %}" id="id_login" name="login" required autofocus>
     <input type="password" class="form-control" placeholder="{% trans 'Password' %}" id="id_password" name="password" required>
     <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign in' %}</button>
 

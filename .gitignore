@@ -76,3 +76,7 @@ local_settings.py
 ###SASS###
 
 .sass-cache
+
+
+### Other ###
+local/

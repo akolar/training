@@ -1,0 +1,58 @@
+{% extends 'settings/_base.html' %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+
+{% block block_title %}Training :: Settings{% endblock block_title %}
+
+
+{% block settings %}
+  <h3>Account</h3>
+
+  <div class="settings">
+    <form class="form-horizontal" role="form">
+      {% csrf_token %}
+
+      {# is not connected account #}
+      {% if user.has_usable_password %}
+        <div class="row">
+          <div class="setting-title col-lg-3">{% trans 'Email' %}</div>
+          <div class="col-sm-6">
+            <input type="email" name="email" id="email" class="form-control" data-action="default" value="{{ user.email }}">
+          </div>
+          <div class="col-sm-1">
+            <span class="glyphicon glyphicon-ok saved"></span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="setting-title col-lg-3">{% trans 'Password' %}</div>
+          <div class="col-sm-6">
+            <input type="password" name="cpasswd" id="cpasswd" class="form-control" placeholder="{% trans 'Current password' %}">
+            <input type="password" name="npasswd1" id="npasswd1" class="form-control" placeholder="{% trans 'New password' %}">
+            <input type="password" name="npasswd2" id="npasswd2" class="form-control" placeholder="{% trans 'Confirm new password' %}">
+            <button type="submit" class="btn btn-primary btn-block" data-action="set-passwd" disabled>{% trans 'Set password' %}</button>
+          </div>
+          <div class="col-sm-3">
+            <span class="glyphicon glyphicon-ok saved"></span>
+            <span class="invalid-current text-danger hidden">{% trans 'Invalid current password' %}</span>
+            <span class="do-not-match text-danger hidden">{% trans 'Passwords do not match' %}</span>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="row">
+        <div class="setting-title col-lg-3">{% trans 'Strava' %}</div>
+        <div class="setting-value col-lg-9">
+          {% if user.strava.token %}
+            <span class="help-block"><strong>{% blocktrans %}You account is connected to Strava.{% endblocktrans %}</strong> <a href="{% url 'strava:disconnect' %}">{% trans 'Disconnect' %}</a></span>
+          {% else %}
+            <a href="/strava/connect"><img src="{% static 'img/strava.png' %}" alt="Connect with Strava"></a>
+            <span class="help-block">{% blocktrans %}By connecting your account, you will be able to download new activities from Strava.{% endblocktrans %}</span>
+          {% endif %}
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock settings %}

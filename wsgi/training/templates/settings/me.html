@@ -1,0 +1,62 @@
+{% extends 'settings/_base.html' %}
+
+{% load i18n %}
+
+
+{% block block_title %}Training :: Settings{% endblock block_title %}
+
+
+{% block settings %}
+  <h3>Me</h3>
+
+  <div class="settings">
+    <form class="form-horizontal" role="form">
+      {% csrf_token %}
+      <div class="row">
+        <div class="setting-title col-lg-3">{% trans 'Name' %}</div>
+        <div class="col-sm-6">
+          <input type="text" name="name" id="name" class="form-control" data-action="default" value="{% if user.first_name %}{{ user.first_name }} {{ user.last_name }}{% endif %}">
+        </div>
+        <div class="col-sm-1">
+          <span class="glyphicon glyphicon-ok saved"></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="setting-title col-lg-3">{% trans 'Gender' %}</div>
+        <div class="col-sm-6">
+          <select name="gender" id="gender" data-action="default">
+            <option value="female" {% if user.details.gender == False %}selected{% endif %}>{% trans 'Female' %}</option>
+            <option value="male" {% if user.details.gender == True %}selected{% endif %}>{% trans 'Male' %}</option>
+            <option value="na" {% if user.details.gender == None %}selected{% endif %}>{% trans "I don't want to tell" %}</option>
+          </select>
+        </div>
+        <div class="col-sm-1">
+          <span class="glyphicon glyphicon-ok saved"></span>
+        </div>
+      </div>
+
+      {# is not connected account #}
+      {% if user.has_usable_password %}
+        <div class="row">
+          <div class="setting-title col-lg-3">{% trans 'Avatar' %}</div>
+          <div class="setting-value col-lg-9">
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+              <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 200px;">
+                <img src="{{ user.details.avatar.url }}" alt="">
+              </div>
+              <div>
+                <a href="#" class="btn btn-success fileinput-exists" data-action="avatar">Save</a>
+                <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><input type="file" name="avatar"></span>
+                <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1">
+            <span class="glyphicon glyphicon-ok saved"></span>
+          </div>
+        </div>
+      {% endif %}
+    </form>
+  </div>
+{% endblock settings %}

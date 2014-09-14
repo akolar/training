@@ -1,3 +1,6 @@
+{% load active from nav %}
+{% load i18n %}
+
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
     {% if request.user.first_name %}{{ request.user.first_name }}{% else %}{{ request.user.email }}{% endif %}
@@ -5,7 +8,7 @@
   </a>
 
   <ul class="dropdown-menu" role="menu">
-    <li><a href="">Settings</a></li>
-    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+    <li class="{% active 'settings_me' 'settings_performance' 'settings_equipment' 'settings_account' %}"><a href="{% url 'settings_index' %}">{% trans 'Settings' %}</a></li>
+    <li><a href="{% url 'account_logout' %}">{% trans 'Logout' %}</a></li>
   </ul>
 </li>

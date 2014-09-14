@@ -1,0 +1,50 @@
+body > .container {
+    margin-top: 60px;
+}
+
+.settings .row {
+    padding: 20px 0;
+    border-bottom: 1px solid #F2F1EF;
+
+    &:first-child {
+        border-top: 1px solid #F2F1EF;
+    }
+
+    .setting-title {
+        padding-top: 5px;
+        text-align: right;
+        color: #757D75;
+    }
+
+    .setting-value {
+        padding-left: 10px;
+
+        .help-block {
+            font-weight: normal;
+        }
+    }
+
+    .saved {
+        color: #26A65B;
+        margin: 8px -20px;
+        opacity: 0;
+
+        -webkit-transition: opacity 500ms ease-out;
+        -moz-transition: opacity 500ms ease-out;
+        -o-transition: opacity 500ms ease-out;
+        transition: opacity 500ms ease-out;
+    }
+
+    .saved.active {
+        opacity: 1;
+    }
+
+    .input-group {
+        float: left;
+        margin-right: 13px;
+    }
+}
+
+.editable-click {
+    border-bottom: none !important;
+}

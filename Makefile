@@ -10,7 +10,7 @@ js: coffee
 
 coffee:
 	@echo 'Compiling Coffee scripts'
-	@find ${STATIC_ROOT}/coffee -name '*.coffee' | xargs coffee -c -o ${STATIC_ROOT}/js
+	@find ${STATIC_ROOT}/coffee -name '*.coffee' | xargs coffee -cb -o ${STATIC_ROOT}/js
 	@echo 'Done'
 
 css:

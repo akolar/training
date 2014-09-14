@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" src="{% static 'img/favicon.ico' %}">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
 
     <title>{% block block_title %}{{ title }}{% endblock block_title %}</title>
 
@@ -21,12 +21,12 @@
     {% block head_extra %}{% endblock head_extra %}
   </head>
 
-  {% block body %}
     <body>
+      {% block body %}
+      {% endblock body %}
 
+      {% include 'base/scripts.html' %}
+      {% block foot_extra %}{% endblock foot_extra %}
     </body>
-  {% endblock body %}
 
-  {% include 'base/scripts.html' %}
-  {% block foot_extra %}{% endblock foot_extra %}
 </html>
