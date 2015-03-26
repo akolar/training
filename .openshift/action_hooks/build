@@ -13,10 +13,3 @@ if [ ! -d $OPENSHIFT_DATA_DIR/static ]; then
     echo "Creating cache dir"
     mkdir $OPENSHIFT_DATA_DIR/cache
 fi
-
-if [ ! -d $OPENSHIFT_DATA_DIR/static ]; then
-    echo "Creating static dir"
-    mkdir $OPENSHIFT_DATA_DIR/static
-fi
-echo "Creating link to $OPENSHIFT_DATA_DIR/static"
-ln -sf $OPENSHIFT_DATA_DIR/static $OPENSHIFT_REPO_DIR/wsgi/static/static

@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.conf.urls.static import static
 
-from training.settings import DEBUG, MEDIA_URL, MEDIA_ROOT
+from django.conf import settings
 
 
 urlpatterns = patterns('',  # noqa
@@ -18,5 +18,5 @@ urlpatterns = patterns('',  # noqa
     url(r'^admin/', include(admin.site.urls)),
 )
 
-if DEBUG:
-    urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
+if not settings.OPENSHIFT:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

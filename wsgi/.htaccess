@@ -3,7 +3,7 @@
 
 RewriteEngine On
 RewriteRule ^application/static/(.+)$ /static/static/$1 [L]
-RewriteRule ^application/uploads/(.+)$ /static/media/$1 [L]
+RewriteRule ^application/media/(.+)$ /static/media/$1 [L]
 
 
 # Expire headers #
