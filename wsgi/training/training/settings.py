@@ -146,12 +146,14 @@ LOCALE_PATHS = (
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'local', 'static')
+STATIC_ROOT = (os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'static', 'static') if OPENSHIFT else
+               os.path.join(PROJECT_DIR, 'local', 'static'))
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
 # Media files
-MEDIA_ROOT = os.path.join(PROJECT_DIR, 'local', 'media')
+MEDIA_ROOT = (os.path.join(os.environ['OPENSHIFT_REPO_DIR'], 'wsgi', 'media', 'media') if OPENSHIFT else
+              os.path.join(PROJECT_DIR, 'local', 'media'))
 MEDIA_URL = '/media/'
 
 # Logging
