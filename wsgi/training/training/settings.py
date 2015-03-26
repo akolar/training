@@ -64,7 +64,7 @@ INSTALLED_APPS = (
     'goals',
 
     # toolbar
-    'debug_toolbar.apps.DebugToolbarConfig'
+    # 'debug_toolbar.apps.DebugToolbarConfig'
 )
 
 MIDDLEWARE_CLASSES = (

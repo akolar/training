@@ -13,6 +13,7 @@ setup(name='Training planer',
           'django-jsonfield==0.9.13',
           'django-bootstrap3==5.0.3',
           'django-allauth==0.19.0',
-          'djorm-pgarray==1.2'
+          'djorm-pgarray==1.2',
+          'django-extensions'
       ],
 )
