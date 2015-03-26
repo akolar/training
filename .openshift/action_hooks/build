@@ -1,0 +1,26 @@
+#!/bin/bash
+# This is a simple build script and will be executed on your CI system if
+# available.  Otherwise it will execute while your application is stopped
+# before the deploy step.  This script gets executed directly, so it
+# could be python, php, ruby, etc.
+
+source ~/app-root/data/.bash_profile
+# Activate VirtualEnv in order to use the correct libraries
+source ~/python/virtenv/bin/activate
+export PYTHON_EGG_CACHE=$OPENSHIFT_PYTHON_DIR/virtenv/lib/python2.7
+
+if [ ! -d $OPENSHIFT_DATA_DIR/static ]; then
+    echo "Creating cache dir"
+    mkdir $OPENSHIFT_DATA_DIR/cache
+fi
+
+if [ ! -d $OPENSHIFT_DATA_DIR/static ]; then
+    echo "Creating static dir"
+    mkdir $OPENSHIFT_DATA_DIR/static
+fi
+echo "Creating link to $OPENSHIFT_DATA_DIR/static"
+ln -sf $OPENSHIFT_DATA_DIR/static $OPENSHIFT_REPO_DIR/wsgi/static/static
+
+echo 'Collecting statics...'
+python $OPENSHIFT_REPO_DIR/wsgi/training/manage.py collectstatic -v 0 --noinput
+echo "Done"
