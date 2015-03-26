@@ -59,7 +59,6 @@ INSTALLED_APPS = (
     # apps
     'user_settings',
     'health',
-    'strava',
     'utils',
     'activities',
     'goals',

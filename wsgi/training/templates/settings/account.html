@@ -43,18 +43,6 @@
       {% endif %}
 
       <div class="row">
-        <div class="setting-title col-lg-3">{% trans 'Strava' %}</div>
-        <div class="setting-value col-lg-9">
-          {% if user.strava.token %}
-            <span class="help-block"><strong>{% blocktrans %}You account is connected to Strava.{% endblocktrans %}</strong> <a href="{% url 'strava:disconnect' %}">{% trans 'Disconnect' %}</a></span>
-          {% else %}
-            <a href="/strava/connect"><img src="{% static 'img/strava.png' %}" alt="Connect with Strava"></a>
-            <span class="help-block">{% blocktrans %}By connecting your account, you will be able to download new activities from Strava.{% endblocktrans %}</span>
-          {% endif %}
-        </div>
-      </div>
-
-      <div class="row">
         <div class="setting-title col-lg-3">{% trans 'Units' %}</div>
         <div class="col-sm-6">
           <select name="units" id="units" data-action="default">

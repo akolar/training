@@ -13,7 +13,6 @@ urlpatterns = patterns('',  # noqa
 
     url(r'^settings/', include('user_settings.urls', namespace='settings')),
 
-    url(r'^strava/', include('strava.urls', namespace='strava')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^i18n/', include('django.conf.urls.i18n', namespace='i18n')),
     url(r'^admin/', include(admin.site.urls)),
