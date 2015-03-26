@@ -41,6 +41,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.gis',
+    'django.contrib.humanize',
+
+    'django_extensions',
 
     # allauth
     'allauth',
@@ -49,11 +53,16 @@ INSTALLED_APPS = (
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
 
+    # other
+    'bootstrap3',
+
     # apps
-    'settings',
+    'user_settings',
     'health',
     'strava',
     'utils',
+    'activities',
+    'goals',
 
     # toolbar
     'debug_toolbar.apps.DebugToolbarConfig'
@@ -104,7 +113,7 @@ WSGI_APPLICATION = 'training.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'training',
         'USER': (os.environ['OPENSHIFT_POSTGRESQL_DB_USERNAME']
                  if OPENSHIFT else os.environ['PSQL_USER']),

@@ -1,0 +1,40 @@
+{% extends "layouts/full-width.html" %}
+
+{% load bootstrap3 %}
+{% load i18n %}
+{% load url from future %}
+
+{% block block_title %}{% trans 'Training :: Upload' %}{% endblock %}
+
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <form action="{% url 'activities:manual-entry' %}" method="POST" class="form" enctype="multipart/form-data">
+        {% bootstrap_form_errors form %}
+        {% csrf_token %}
+
+        {% bootstrap_form form %}
+
+        <div class="form-group">
+          <label for="id_time_hrs" class="control-label">Time</label>
+
+          <div class="input-group col-lg-6">
+              <input type="number" class="form-control" id="id_time_hrs" placeholder="Hours" data-tc="true" min="0" max="24">
+              <div class="input-group-addon">:</div>
+              <input type="number" class="form-control" id="id_time_min" placeholder="Min" data-tc="true" min="0" max="60">
+              <div class="input-group-addon">:</div>
+              <input type="number" class="form-control" id="id_time_sec" placeholder="Sec" data-tc="true" min="0" max="60">
+          </div>
+        </div>
+
+        {% buttons %}
+          <button type="submit" class="btn btn-primary">
+            {% bootstrap_icon "floppy-saved" %} {% trans 'Save' %}
+          </button>
+        {% endbuttons %}
+
+      </form>
+    </div>
+  </div>
+{% endblock content %}

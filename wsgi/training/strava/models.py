@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from djorm_pgarray.fields import IntegerArrayField
+
 
 class Strava(models.Model):
     user = models.OneToOneField(User)
@@ -9,3 +11,4 @@ class Strava(models.Model):
     granted = models.DateTimeField(auto_now_add=True)
 
     last_access = models.DateTimeField(auto_now=True)
+    fetched = IntegerArrayField(default=[])

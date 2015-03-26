@@ -1,0 +1,41 @@
+{% extends "layouts/full-width.html" %}
+
+{% load i18n %}
+{% load l10n %}
+{% load url from future %}
+{% load active from nav %}
+
+{% block block_title %}{% trans 'Training :: ' %}{{ activity }}{% endblock %}
+
+{% block head_extra %}
+  <script>
+    var SI_UNITS = {{ user.details.si_units|lower }};
+  </script>
+{% endblock head_extra %}
+
+{% block content %}
+  <ol class="breadcrumb">
+    <li><a href="{% url 'activities:view-all' %}">{% trans 'Activities' %}</a></li>
+    <li>{{ activity.date|date:'SHORT_DATE_FORMAT' }}</li>
+    <li class="active">{{ activity|localize }}</li>
+
+    <li class="pull-right edit-action"><a href="{% url 'activities:delete' activity.id %}" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Delete activity' %}" data-action="delete-activity"><i class="glyphicon glyphicon-trash"></i></a></li>
+    <li class="pull-right edit-action"><a href="{% url 'activities:edit' activity.id %}" data-toggle="tooltip" data-placement="bottom" title="{% trans 'Edit activity' %}"><i class="glyphicon glyphicon-pencil"></a></i></li>
+  </ol>
+
+  <div class="row">
+    <div class="col-lg-2">
+      <ul class="nav nav-pills nav-stacked">
+          <li class="{% active 'activities:view' %}"><a href="{% url 'activities:view' activity.id %}">{% trans 'Overview' %}</a></li>
+          <li class="{% active 'activities:charts' %}"><a href="{% url 'activities:charts' activity.id %}">{% trans 'Charts' %}</a></li>
+          <li class="{% active 'activities:zones' %}"><a href="{% url 'activities:zones' activity.id %}">{% trans 'Zones' %}</a></li>
+          <li class="{% active 'activities:splits' %}"><a href="{% url 'activities:splits' activity.id %}">{% trans 'Splits' %}</a></li>
+          <li class="{% active 'activities:map' %}"><a href="{% url 'activities:map' activity.id %}">{% trans 'Big map' %}</a></li>
+      </ul>
+    </div>
+    <div class="col-lg-10">
+      {% block activity_content %}
+      {% endblock activity_content %}
+    </div>
+  </div>
+{% endblock content %}

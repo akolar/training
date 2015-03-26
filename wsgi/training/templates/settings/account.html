@@ -53,6 +53,19 @@
           {% endif %}
         </div>
       </div>
+
+      <div class="row">
+        <div class="setting-title col-lg-3">{% trans 'Units' %}</div>
+        <div class="col-sm-6">
+          <select name="units" id="units" data-action="default">
+            <option value="metric" {% if user.details.si_units == True %}selected{% endif %}>{% trans 'Metric' %}</option>
+            <option value="imperial" {% if user.details.si_units == False %}selected{% endif %}>{% trans 'Imperial' %}</option>
+          </select>
+        </div>
+        <div class="col-sm-1">
+          <span class="glyphicon glyphicon-ok saved"></span>
+        </div>
+      </div>
     </form>
   </div>
 {% endblock settings %}

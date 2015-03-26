@@ -1,0 +1,28 @@
+{% extends "activities/view-base.html" %}
+
+{% load i18n %}
+{% load url from future %}
+{% load map %}
+
+{% block block_title %}{% trans 'Training :: ' %}{{ activity }}{% endblock %}
+
+
+{% block activity_content %}
+  {% if activity.track %}
+    <div id="elevation_chart"></div>
+    <div id="speed_chart"></div>
+    <div id="grade_chart"></div>
+  {% endif %}
+
+  {% if activity.heart_rate %}
+    <div id="hr_chart"></div>
+  {% endif %}
+
+  {% if activity.cadence %}
+    <div id="cad_chart"></div>
+  {% endif %}
+
+  {% if activity.temperature %}
+    <div id="temp_chart"></div>
+  {% endif %}
+{% endblock activity_content %}

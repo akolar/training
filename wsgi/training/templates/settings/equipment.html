@@ -1,0 +1,74 @@
+{% extends 'settings/_base.html' %}
+
+{% load i18n %}
+{% load url from future %}
+
+{% block block_title %}Training :: Settings{% endblock block_title %}
+
+{% block settings %}
+  <a href="{% url 'settings:equipment_add' 'bike' %}" class="btn pull-right">+</a>
+  <h3>Bikes</h3>
+  <table class="table">
+    <thead>
+      <th></th>
+      <th>Name</th>
+      <th>Comment</th>
+      <th>Distance</th>
+    </thead>
+
+    <tbody>
+      {% for b in bike %}
+        <tr>
+          <td></td>
+          <td><a href="{% url 'settings:equipment_add' 'bike' b.id %}">{{ b.name }}</a></td>
+          <td>{{ b.comment }}</td>
+          <td>{{ b.distance }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a href="{% url 'settings:equipment_add' 'shoes' %}" class="btn pull-right">+</a>
+  <h3>Shoes</h3>
+  <table class="table">
+    <thead>
+      <th></th>
+      <th>Name</th>
+      <th>Comment</th>
+      <th>Distance</th>
+    </thead>
+
+    <tbody>
+      {% for s in shoes %}
+        <tr>
+          <td></td>
+          <td><a href="{% url 'settings:equipment_add' 'shoes' s.id %}">{{ s.name }}</a></td>
+          <td>{{ s.comment }}</td>
+          <td>{{ s.distance }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a href="{% url 'settings:equipment_add' 'other' %}" class="btn pull-right">+</a>
+  <h3>Other</h3>
+  <table class="table">
+    <thead>
+      <th></th>
+      <th>Name</th>
+      <th>Comment</th>
+      <th>Distance</th>
+    </thead>
+
+    <tbody>
+      {% for o in other %}
+        <tr>
+          <td></td>
+          <td><a href="{% url 'settings:equipment_add' 'other' o.id %}">{{ o.name }}</a></td>
+          <td>{{ o.comment }}</td>
+          <td>{{ o.distance }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock settings %}

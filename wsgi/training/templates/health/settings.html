@@ -15,7 +15,7 @@
       <div class="row">
         <div class="setting-title col-lg-3">{% trans 'Height' %}</div>
         <div class="setting-value col-sm-3 input-group">
-          <input type="text" name="height" id="height" class="form-control ajax-field" value="{% if user.athlete.height %}{{ user.athlete.height }}{% endif %}">
+          <input type="text" name="height" id="height" class="form-control ajax-field" data-action="default" value="{% if user.athlete.height %}{{ user.athlete.height }}{% endif %}">
           <div class="input-group-addon">cm</div>
         </div>
         <div class="col-sm-1">
@@ -26,7 +26,7 @@
       <div class="row">
         <div class="setting-title col-lg-3">{% trans 'Max HR' %}</div>
         <div class="setting-value col-sm-3 input-group">
-          <input type="text" name="mhr" id="mhr" class="form-control ajax-field" value="{% if user.athlete.max_hr %}{{ user.athlete.max_hr }}{% endif %}">
+          <input type="text" name="mhr" id="mhr" class="form-control ajax-field" data-action="default" value="{% if user.athlete.max_hr %}{{ user.athlete.max_hr }}{% endif %}">
           <div class="input-group-addon">bpm</div>
         </div>
         <div class="col-sm-1">
@@ -37,30 +37,8 @@
       <div class="row">
         <div class="setting-title col-lg-3">{% trans 'LT HR' %}</div>
         <div class="setting-value col-sm-3 input-group">
-          <input type="text" name="lthr" id="lthr" class="form-control ajax-field" value="{% if user.athlete.lt_hr %}{{ user.athlete.lt_hr }}{% endif %}">
+          <input type="text" name="lthr" id="lthr" class="form-control ajax-field" data-action="default" value="{% if user.athlete.lt_hr %}{{ user.athlete.lt_hr }}{% endif %}">
           <div class="input-group-addon">bpm</div>
-        </div>
-        <div class="col-sm-1">
-          <span class="glyphicon glyphicon-ok saved"></span>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="setting-title col-lg-3">{% trans 'Max power' %}</div>
-        <div class="setting-value col-sm-3 input-group">
-          <input type="text" name="mp" id="mp" class="form-control ajax-field" value="{% if user.athlete.max_power %}{{ user.athlete.max_power }}{% endif %}">
-          <div class="input-group-addon">W</div>
-        </div>
-        <div class="col-sm-1">
-          <span class="glyphicon glyphicon-ok saved"></span>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="setting-title col-lg-3">{% trans 'FT power' %}</div>
-        <div class="setting-value col-sm-3 input-group">
-          <input type="text" name="ftp" id="ftp" class="form-control ajax-field" value="{% if user.athlete.lt_power %}{{ user.athlete.lt_power }}{% endif %}">
-          <div class="input-group-addon">W</div>
         </div>
         <div class="col-sm-1">
           <span class="glyphicon glyphicon-ok saved"></span>

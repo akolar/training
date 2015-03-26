@@ -1,0 +1,71 @@
+{% extends "activities/view-base.html" %}
+
+{% load i18n %}
+{% load url from future %}
+{% load map %}
+
+{% block block_title %}{% trans 'Training :: ' %}{{ activity }}{% endblock %}
+
+
+{% block activity_content %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>1 min</th>
+        <th>5 min</th>
+        <th>15 min</th>
+        <th>1 {% if user.details.si_units %}km{% else %}mile{% endif %}
+        <th>0.5 {% if user.details.si_units %}km{% else %}mile{% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% if activity.track %}
+        <tr>
+          <th>{% trans 'Distance/time' %}</th>
+          <td data-best-split="distance-1-min"></td>
+          <td data-best-split="distance-5-min"></td>
+          <td data-best-split="distance-15-min"></td>
+          <td data-best-split="time-1-{% if user.details.si_units %}km{% else %}mile{% endif %}"></td>
+          <td data-best-split="time-0.5-{% if user.details.si_units %}km{% else %}mile{% endif %}"></td>
+        </tr>
+        <tr>
+          <th>{% trans 'Speed' %}</th>
+          <td data-best-split="speed-1-min"></td>
+          <td data-best-split="speed-5-min"></td>
+          <td data-best-split="speed-15-min"></td>
+          <td data-best-split="speed-1-{% if user.details.si_units %}km{% else %}mile{% endif %}"></td>
+          <td data-best-split="speed-0.5-{% if user.details.si_units %}km{% else %}mile{% endif %}"></td>
+        </tr>
+        <tr>
+          <th>{% trans 'Elevation gain' %}</th>
+          <td data-best-split="elevation-1-min"></td>
+          <td data-best-split="elevation-5-min"></td>
+          <td data-best-split="elevation-15-min"></td>
+          <td data-best-split="elevation-1-{% if user.details.si_units %}km{% else %}mile{% endif %}"></td>
+          <td data-best-split="elevation-0.5-{% if user.details.si_units %}km{% else %}mile{% endif %}"></td>
+        </tr>
+      {% endif %}
+      {% if activity.heart_rate %}
+        <tr>
+          <th>{% trans 'Heart rate' %}</th>
+          <td data-best-split="hr-1-min"></td>
+          <td data-best-split="hr-5-min"></td>
+          <td data-best-split="hr-15-min"></td>
+          <td data-best-split="hr-1-{% if user.details.si_units %}km{% else %}mile{% endif %}"></td>
+          <td data-best-split="hr-0.5-{% if user.details.si_units %}km{% else %}mile{% endif %}"></td>
+        </tr>
+      {% endif %}
+      {% if activity.cadence %}
+        <tr>
+          <th>{% trans 'Cadence' %}</th>
+          <td data-best-split="cad-1-min"></td>
+          <td data-best-split="cad-5-min"></td>
+          <td data-best-split="cad-15-min"></td>
+          <td data-best-split="cad-1-{% if user.details.si_units %}km{% else %}mile{% endif %}"></td>
+          <td data-best-split="cad-0.5-{% if user.details.si_units %}km{% else %}mile{% endif %}"></td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+{% endblock activity_content %}

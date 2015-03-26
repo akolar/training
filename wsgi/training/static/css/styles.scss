@@ -48,3 +48,110 @@ body > .container {
 .editable-click {
     border-bottom: none !important;
 }
+
+.pagination {
+    display: block;
+}
+
+ul.inline-stats {
+    li {
+        display: inline-block;
+        text-decoration: none;
+        margin-right: 15px;
+    }
+
+    strong {
+        font-size: 24px;
+        margin-bottom: -5px;
+        font-weight: lighter;
+        display: block;
+    }
+
+    span {
+        font-size: 12px;
+    }
+}
+
+ul.small-stats {
+    li {
+        display: block;
+        text-decoration: none;
+    }
+}
+
+.week-view {
+    tr {
+        td {
+            height: 100px;
+            min-height: 50px;
+            max-width: 12%;
+            width: 12%;
+        }
+
+        td:last-child {
+            max-width: 16%;
+            width: 16%;
+        }
+    }
+
+    .day {
+        font-weight: bold;
+        float: right;
+        text-align: right;
+    }
+
+    dt {
+        width: 50px;
+    }
+
+    dd {
+        margin-left: 70px;
+    }
+}
+
+#map.map-fs {
+    height: calc(100vh - 50px - 125px);;
+    margin-top: 50px;
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+}
+
+.bm-nav {
+    width: 100%;
+    height: 125px;
+    position: absolute;
+    bottom: 50px;
+}
+
+.map-back {
+    position: absolute;
+    bottom: 170px;
+    right: 0;
+    z-index: 999;
+    background: #ffffff;
+    border-top-left-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.breadcrumb>li+li.edit-action:before {
+    content: '';
+}
+
+.breadcrumb>li+li.edit-action a {
+    color: black;
+}
+
+.carousel .carousel-caption-big {
+    font-size: 250%;
+    font-weight: bold;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+    top: 25%;
+}
+
+.btn-margin {
+    margin-top: 22px;
+}

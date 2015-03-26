@@ -1,0 +1,29 @@
+{% extends "layouts/full-width.html" %}
+
+{% load bootstrap3 %}
+{% load i18n %}
+{% load url from future %}
+
+{% block block_title %}{% trans 'Training :: Upload' %}{% endblock %}
+
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <form action="{% url 'activities:upload' %}" method="POST" class="form" enctype="multipart/form-data">
+        {% bootstrap_form_errors form %}
+        {% csrf_token %}
+
+        {% bootstrap_form form %}
+
+        {% buttons %}
+          <button type="submit" class="btn btn-primary">
+            {% bootstrap_icon "floppy-saved" %} {% trans 'Save' %}
+          </button>
+        {% endbuttons %}
+      </form>
+
+      <a href="{% url 'activities:manual-entry' %}">{% trans 'For a manual entry click here.' %}</a>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 
 
-class IndexView(TemplateView):
-    template_name = 'presentation/index.html'
-    title = 'Training :: Home'
+def index(request):
+    if request.user.is_authenticated():
+        return redirect('activities:overview')
+
+    return render(request, 'presentation/index.html')

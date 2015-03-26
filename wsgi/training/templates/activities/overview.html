@@ -1,0 +1,81 @@
+{% extends "layouts/full-width.html" %}
+
+{% load i18n %}
+{% load url from future %}
+
+{% block block_title %}{% trans 'Training :: ' %}{% trans 'Summary' %}{% endblock %}
+
+{% block head_extra %}
+  <script>
+    var SI_UNITS = {{ user.details.si_units|lower }};
+  </script>
+{% endblock head_extra %}
+
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-9">
+      <h3>Recent activities</h3>
+
+      <table class="table table-striped table-condensed table-bordered week-view">
+        {% for week in weekly %}
+          <tr>
+            {% for day in week.days %}
+              <td {% if day.activities %}class="success"{% else %}class="danger"{% endif %}>
+                <span class="day">{{ day.day }}</span>
+                {% for activity in day.activities %}
+                  <a href="{% url 'activities:view' activity.id %}">{{ activity }}</a>
+                {% endfor %}
+              </td>
+            {% endfor %}
+
+            <td>
+              <dl class="dl-horizontal">
+                <dt>#</dt>
+                <dd>{{ week.summary.n }}</dd>
+                <dt>Time</dt>
+                <dd>{{ week.summary.time }}</dd>
+                <dt>Dist</dt>
+                <dd>{{ week.summary.distance }}</dd>
+              </dl>
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+
+      <a href="{% url 'activities:view-all' %}">View more &rarr;</a>
+    </div>
+
+    <div class="col-lg-3">
+      <h3>Goals</h3>
+      {% if request.user.goals.has_any %}
+        {% if request.user.goals.has_weekly %}
+          <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{ weekly_progress }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{ weekly_progress }}%;">
+              {{ weekly_progress }}%
+            </div>
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ week_expected }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ week_expected }}%;"></div>
+          </div>
+        {% endif %}
+        {% if request.user.goals.has_monthly %}
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ monthly_progress }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{ monthly_progress }}%;">
+              {{ monthly_progress }}%
+            </div>
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ month_expected }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ month_expected }}%;"></div>
+          </div>
+        {% endif %}
+        {% if request.user.goals.has_yearly %}
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{ yearly_progress }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{ yearly_progress }}%;">
+              {{ yearly_progress }}%
+            </div>
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{ year_expected }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ year_expected }}%;"></div>
+          </div>
+        {% endif %}
+      {% else %}
+        <a href="{% url 'activities:summary' %}">{% trans "You have no goals set for yourself. Set them here." %}</a>
+      {% endif %}
+    </div>
+  </div>
+{% endblock content %}

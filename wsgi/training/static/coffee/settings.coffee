@@ -64,3 +64,16 @@ $ ->
                 do location.reload
 
         return false
+
+    $('[data-action="goals"]').change ->
+        field = $(this)
+        params = this.name.split('_')
+
+        $.ajax
+            url: '/goals/set/' + params[0]
+            data:
+                objective: params[1]
+                value: do field.val
+            method: 'PUT'
+            success: (data, textStatus, jqXHR) ->
+                console.log data

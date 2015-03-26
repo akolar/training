@@ -1,0 +1,70 @@
+{% extends "layouts/full-width.html" %}
+
+{% load i18n %}
+{% load url from future %}
+{% load humanize %}
+{% load map %}
+{% load urlfilter from sort %}
+
+
+{% block block_title %}{% trans 'Training :: ' %}{% trans 'Activities' %}{% endblock %}
+
+
+{% block content %}
+  {% if status == 'failed' %}
+    <div class="alert alert-danger" role="alert">
+      {% trans 'Upload failed. Similar activity already exists.' %}
+    </div>
+  {% endif %}
+
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th><a href="{% urlfilter 'date' %}">{% trans 'Date' %}</a></th>
+        <th><a href="{% urlfilter 'sport' %}">{% trans 'Sport' %}</a></th>
+        <th><a href="{% urlfilter 'title' %}">{% trans 'Title' %}</a></th>
+        <th><a href="{% urlfilter 'distance' %}">{% trans 'Dist' %}</a></th>
+        <th><a href="{% urlfilter 'elevation' %}">{% trans 'Elev' %}</a></th>
+        <th><a href="{% urlfilter 'time' %}">{% trans 'Time' %}</a></th>
+        <th><a href="{% urlfilter 'speed' %}">{% trans 'Speed' %}/pace</a></th>
+        <th><a href="{% urlfilter 'hr' %}">{% trans 'HR' %}</a></th>
+        <th><a href="{% urlfilter 'temperature' %}">{% trans 'Temp' %}</a></th>
+        <th><a href="{% urlfilter 'rpe' %}">{% trans 'RPE' %}</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for activity in activities %}
+        <tr>
+          <td>{{ activity.date|date:'SHORT_DATE_FORMAT' }}</td>
+          <td>{{ activity.get_sport_display }}</td>
+          <td><a href="{% url 'activities:view' activity.id %}">{{ activity }}</a></td>
+          <td>{% units activity.get_distance 1 %}</td>
+          <td>{% units activity.get_elevation_gain %}</td>
+          <td>{{ activity.get_moving_time|time:'G:i:s' }}</td>
+          <td>{% if activity.has_pace %}{% pace activity.get_pace_speed_avg %}  / {% per_km %}{% else %}{% units activity.get_pace_speed_avg 1 %}{% endif %}</td>
+          <td>{% if activity.hr_avg %}{{ activity.get_hr_avg }}{% else %}n/a{% endif %}</td>
+          <td>{% if activity.temperature_avg %}{{ activity.get_avg_temperature }}{% else %}n/a{% endif %}</td>
+          <td>{{ activity.rating }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <nav>
+    <ul class="pagination">
+      <li {% if current_page == 1 %}class="disabled"{% endif %}>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      {% for page in pages_list %}
+        <li {% if page == current_page %}class="disabled"{% endif %}><a href="{% urlfilter keep_inversion=True page=page %}">{{ page }}</a></li>
+      {% endfor %}
+      <li {% if current_page == pages_list|last %}class="disabled"{% endif %}>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+{% endblock content %}

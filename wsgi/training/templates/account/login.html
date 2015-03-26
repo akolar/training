@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load url from future %}
 
-{% block head_title %}{% trans 'Training :: Sign in' %}{% endblock %}
+{% block block_title %}{% trans 'Training :: Sign in' %}{% endblock %}
 
 {% block content %}
   <form class="form-signin" role="form" method="POST" action="{% url 'account_login' %}">

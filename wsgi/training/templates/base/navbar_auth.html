@@ -1,7 +1,8 @@
+{% load url from future %}
+{% load active from nav %}
+
 <ul class="nav navbar-nav">
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
-  <li><a href="#">Link</a></li>
+  <li class="{% active 'activities:overview' %}"><a href="{% url 'activities:overview' %}">Overview</a></li>
+  <li class="{% active 'activities:view-all' %}"><a href="{% url 'activities:view-all' %}">Activities</a></li>
+  <li class="{% active 'activities:summary' %}"><a href="{% url 'activities:summary' %}">Summary</a></li>
 </ul>

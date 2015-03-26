@@ -1,0 +1,62 @@
+{% extends "activities/view-base.html" %}
+
+{% load i18n %}
+{% load url from future %}
+{% load map %}
+
+{% block block_title %}{% trans 'Training :: ' %}{{ activity }}{% endblock %}
+
+
+{% block activity_content %}
+  <div class="row">
+    <div class="col-lg-6">
+      <ul class="inline-stats">
+        <li>
+        <strong>{% units activity.get_distance 1 %}</strong>
+          <span>{% trans 'Distance' %}</span>
+        </li>
+        <li>
+          <strong>{{ activity.get_moving_time|time:'G:i:s' }}</strong>
+          <span>{% trans 'Moving time' %}</span>
+        </li>
+        <li>
+          <strong>{% if activity.has_pace %}{% pace activity.get_pace_speed_avg %} / {% per_km %}{% else %}{% units activity.get_pace_speed_avg %}{% endif %}</strong>
+          <span>{% if activity.has_pace %}{% trans 'Pace' %}{% else %}{% trans 'Average speed' %}{% endif %}</span>
+        </li>
+      </ul>
+
+      <dl class="stats-details dl-horizontal">
+        <dt>{% trans 'Elapsed time' %}</dt>
+        <dd>{{ activity.get_elapsed_time|time:'G:i:s' }}</dd>
+
+        <dt>{% trans 'Rest' %}</dt>
+        <dd>{{ activity.get_rest|time:'G:i:s' }}</dd>
+
+        <dt>{% trans 'Elevation' %}</dt>
+        <dd>{% units activity.get_elevation_gain %}</dd>
+
+        <dt>{% if activity.has_pace %}{% trans 'Max. pace' %}{% else %}{% trans 'Max. speed' %}{% endif %}</dt>
+        <dd>{% if activity.has_pace %}{% pace activity.get_max_pace_speed %} / {% per_km %}{% else %}{% units activity.get_max_pace_speed %}{% endif %}</dd>
+
+        {% if activity.hr_avg %}
+          <dt>{% trans 'Avg. heart rate' %}</dt>
+          <dd>{{ activity.get_hr_avg }} bpm</dd>
+
+          <dt>{% trans 'Max. heart rate' %}</dt>
+          <dd>{{ activity.get_hr_max }} bpm</dd>
+        {% endif %}
+
+        {% if activity.comments %}
+          <dt>{% trans 'Comments' %}</dt>
+          <dd>{{ activity.comments }}</dd>
+        {% endif %}
+      </dl>
+    </div>
+
+    <div class="col-lg-6" id="ochart"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12" id="map"></div>
+  </div>
+{% endblock activity_content %}

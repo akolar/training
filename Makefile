@@ -5,7 +5,7 @@ all: js css
 
 js: coffee
 	@echo 'Minifying JS files'
-	@uglifyjs -mc --screw-ie8 ${STATIC_ROOT}/js/*.js -o ${STATIC_ROOT}/dist/training.min.js
+	@uglifyjs --screw-ie8 ${STATIC_ROOT}/js/*.js -o ${STATIC_ROOT}/dist/training.min.js
 	@echo 'Done'
 
 coffee:

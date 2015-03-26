@@ -1,32 +1,27 @@
+import requests
 from datetime import datetime
 
 from django.core.urlresolvers import reverse
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect
+from django.conf import settings
 
 from stravalib.client import Client
-import requests
 
-
-from training.settings import STRAVA_ID, STRAVA_SECRET
 from strava.models import Strava
 
 
 def connect(request):
     client = Client()
-    callback = HttpRequest.build_absolute_uri(request,
-                                              reverse('strava:callback'))
+    callback = HttpRequest.build_absolute_uri(request, reverse('strava:callback'))
 
-    url = client.authorization_url(client_id=STRAVA_ID,
-                                   scope='view_private',
-                                   redirect_uri=callback)
+    url = client.authorization_url(client_id=STRAVA_ID, scope='view_private', redirect_uri=callback)
     return redirect(url)
 
 
 def callback(request):
     client = Client()
-    token = client.exchange_code_for_token(client_id=STRAVA_ID,
-                                           client_secret=STRAVA_SECRET,
+    token = client.exchange_code_for_token(client_id=settings.STRAVA_ID, client_secret=settings.STRAVA_SECRET,
                                            code=request.GET['code'])
 
     try:

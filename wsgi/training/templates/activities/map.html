@@ -1,0 +1,24 @@
+{% extends "layouts/full-screen.html" %}
+
+{% load i18n %}
+{% load url from future %}
+{% load map %}
+
+{% block block_title %}{% trans 'Training :: ' %}{{ activity }}{% endblock %}
+
+
+{% block head_extra %}
+  <script>
+    var SI_UNITS = {{ user.details.si_units|lower }};
+  </script>
+{% endblock head_extra %}
+
+
+{% block content %}
+  <div class="map-back">
+    <a href="{% url 'activities:view' activity.id %}">Back to activity</a>
+  </div>
+
+  <div id="map" class="map-fs"></div>
+  <div id="ochart" class="bm-nav"></div>
+{% endblock content %}

@@ -7,19 +7,19 @@ register = template.Library()
 
 @register.simple_tag(takes_context=True)
 def active(context, *args):
-    matches = current_url_equals(context, *args)
+    matches = _current_url_equals(context, *args)
     return ' active' if matches else ''
 
 
-def current_url_equals(context, *args):
-    resolved = False
-
+def _current_url_equals(context, *args):
     for key in args:
         try:
             resolved = urlresolvers.resolve(context.get('request').path)
-            if resolved.url_name == key:
+            if '{}:{}'.format(resolved.namespace, resolved.url_name) == key:
                 return True
         except:
             pass
 
     return False
+
+

@@ -1,0 +1,108 @@
+{% extends "layouts/full-width.html" %}
+
+{% load i18n %}
+{% load url from future %}
+
+{% block block_title %}{% trans 'Training :: ' %}{% trans 'Summary' %}{% endblock %}
+
+{% block head_extra %}
+  <script>
+    var SI_UNITS = {{ user.details.si_units|lower }};
+  </script>
+{% endblock head_extra %}
+
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <select name="summary_for" id="summary_for">
+            <option value="week">Weekly summary</option>
+            <option value="month">Monthly summary</option>
+            <option value="year">Yearly summary</option>
+          </select>
+        </div>
+
+        <div class="panel-body">
+          <dl class="dl-horizontal">
+            <dt>{% trans '# activities' %}</dt>
+            <dd id="n_activities"></dd>
+            <dt>{% trans '# runs' %}</dt>
+            <dd id="n_runs"></dd>
+            <dt>{% trans '# rides' %}</dt>
+            <dd id="n_rides"></dd>
+            <dt>{% trans '# others' %}</dt>
+            <dd id="n_other"></dd>
+            <dt>{% trans 'Distance' %}</dt>
+            <dd id="total_distance"></dd>
+            <dt>{% trans 'Longest activity' %}</dt>
+            <dd id="longest"></dd>
+            <dt>{% trans 'Avg. duration' %}</dt>
+            <dd id="avg_duration"></dd>
+            <dt>{% trans 'Time' %}</dt>
+            <dd id="total_time"></dd>
+            <dt>{% trans 'Farthest activity' %}</dt>
+            <dd id="farthest"></dd>
+            <dt>{% trans 'Avg. distance' %}</dt>
+            <dd id="avg_distance"></dd>
+            <dt>{% trans 'Max. speed' %}</dt>
+            <dd id="max_speed"></dd>
+            <dt>{% trans 'Avg. speed' %}</dt>
+            <dd id="avg_speed"></dd>
+            <dt>{% trans 'Elevation gain' %}</dt>
+            <dd id="elev_gain"></dd>
+            <dt>{% trans 'Avg. RPE' %}</dt>
+            <dd id="avg_rpe"></dd>
+          </dl>
+        </div>
+      </div>
+
+      <h4>Weekly chart</h4>
+      <div id="wchart"></div>
+    </div>
+
+    <div class="col-lg-3">
+      <h4>{% trans 'Goals' %}</h4>
+      <h5>{% trans 'Weekly' %}</h5>
+      <form>
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="w_distance">{% trans 'Distance' %} ({% if user.details.si_units %}km{% else %}mi{% endif %})</label>
+          <input type="number" class="form-control" data-action="goals" name="week_distance" id="w_distance" min="0" max="5000" step="10" value="{{ request.user.goals.weekly_distance }}">
+        </div>
+        <div class="form-group">
+          <label for="w_time">{% trans 'Time (hours)' %}</label>
+          <input type="number" class="form-control" data-action="goals" name="week_time" id="w_time" min="0" max="168" step="10" value="{{ request.user.goals.weekly_time }}">
+        </div>
+      </form>
+
+      <h5>{% trans 'Monthly' %}</h5>
+      <form>
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="w_distance">{% trans 'Distance' %} ({% if user.details.si_units %}km{% else %}mi{% endif %})</label>
+          <input type="number" class="form-control" data-action="goals" name="month_distance" id="w_distance" min="0" max="5000" step="10" value="{{ request.user.goals.monthly_distance }}">
+        </div>
+        <div class="form-group">
+          <label for="w_time">{% trans 'Time (hours)' %}</label>
+          <input type="number" class="form-control" data-action="goals" name="month_time" id="w_time" min="0" max="168" step="10" value="{{ request.user.goals.monthly_time }}">
+        </div>
+      </form>
+
+      <h5>{% trans 'Yearly' %}</h5>
+      <form>
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="w_distance">{% trans 'Distance' %} ({% if user.details.si_units %}km{% else %}mi{% endif %})</label>
+          <input type="number" class="form-control" data-action="goals" name="year_distance" id="w_distance" min="0" max="5000" step="10" value="{{ request.user.goals.yearly_distance }}">
+        </div>
+        <div class="form-group">
+          <label for="w_time">{% trans 'Time (hours)' %}</label>
+          <input type="number" class="form-control" data-action="goals" name="year_time" id="w_time" min="0" max="168" step="10" value="{{ request.user.goals.yearly_time }}">
+        </div>
+      </form>
+
+    </div>
+  </div>
+{% endblock content %}
