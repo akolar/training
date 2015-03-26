@@ -20,7 +20,3 @@ if [ ! -d $OPENSHIFT_DATA_DIR/static ]; then
 fi
 echo "Creating link to $OPENSHIFT_DATA_DIR/static"
 ln -sf $OPENSHIFT_DATA_DIR/static $OPENSHIFT_REPO_DIR/wsgi/static/static
-
-echo 'Collecting statics...'
-python $OPENSHIFT_REPO_DIR/wsgi/training/manage.py collectstatic -v 0 --noinput
-echo "Done"

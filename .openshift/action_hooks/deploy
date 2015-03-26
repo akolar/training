@@ -9,6 +9,10 @@ source ~/app-root/data/.bash_profile
 source ~/python/virtenv/bin/activate
 export PYTHON_EGG_CACHE=$OPENSHIFT_PYTHON_DIR/virtenv/lib/python2.7
 
+echo 'Collecting statics...'
+python $OPENSHIFT_REPO_DIR/wsgi/training/manage.py collectstatic -v 0 --noinput
+echo "Done"
+
 echo 'Syncing database...'
 python $OPENSHIFT_REPO_DIR/wsgi/training/manage.py syncdb
 python $OPENSHIFT_REPO_DIR/wsgi/training/manage.py migrate
