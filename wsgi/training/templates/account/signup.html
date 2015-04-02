@@ -20,7 +20,7 @@
 
     <span class="login-or center-block center">&mdash; {% trans 'or' %} &mdash;</span>
 
-    {{ form.errors }}
+    {% bootstrap_form_errors form %}
     <input id="id_email" name="email" class="form-control" placeholder="{% trans 'Email address' %}" type="email" required autofocus>
     <input id="id_password1" name="password1" class="form-control" placeholder="{% trans 'Password' %}" type="password" required>
 
