@@ -1,6 +1,7 @@
 {% extends "layouts/full-width.html" %}
 
 {% load i18n %}
+{% load bootstrap3 %}
 {% load url from future %}
 
 {% block block_title %}{% trans 'Training :: Sign in' %}{% endblock %}
@@ -23,9 +24,9 @@
 
     <span class="login-or center-block center">&mdash; {% trans 'or' %} &mdash;</span>
 
-    {{ form.errors }}
-    <input type="email" class="form-control" placeholder="{% trans 'Email address' %}" id="id_login" name="login" required autofocus>
-    <input type="password" class="form-control" placeholder="{% trans 'Password' %}" id="id_password" name="password" required>
+    {% bootstrap_form_errors form 'icon-remove' %}
+    {% bootstrap_form form %}
+
     <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign in' %}</button>
 
     <hr class="divider">

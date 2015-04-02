@@ -59,3 +59,11 @@
   display: block;
   text-align: center;
 }
+
+.form-signin label {
+  display: none;
+}
+
+.form-signin .form-group {
+  margin-bottom: 0;
+}
