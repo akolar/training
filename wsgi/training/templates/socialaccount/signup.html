@@ -1,0 +1,30 @@
+{% extends "layouts/full-width.html" %}
+
+{% load i18n %}
+{% load bootstrap3 %}
+{% load url from future %}
+
+{% block block_title %}{% trans 'Training :: Sign up' %}{% endblock %}
+
+
+{% block content %}
+  <form class="form-signin" role="form" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
+    {% csrf_token %}
+
+    <h3 class="form-signin-heading">{% trans 'Sign up' %}</h3>
+    <p>{% blocktrans with provider_name=account.get_provider.name site_name=site.name %}You are about to use your {{provider_name}} account to login to
+      {{site_name}}. As a final step, please complete the following form:{% endblocktrans %}</p>
+
+
+    {% bootstrap_form_errors form %}
+
+    {% bootstrap_form form %}
+
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans 'Sign up' %}</button>
+  </form>
+{% endblock %}
+
+
