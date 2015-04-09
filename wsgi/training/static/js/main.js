@@ -10,7 +10,7 @@ getCookie = function(name) {
       cookie = cookies[i];
       c = $.trim(cookie);
       if ((c.substring(0, name.length + 1)) === (name + '=')) {
-        cookieValue = decodeURIComponent(cookie.substring(name.length + 2));
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
         break;
       }
     }

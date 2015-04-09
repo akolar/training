@@ -64,9 +64,9 @@
 
     <div class="col-lg-3">
       <h4>{% trans 'Goals' %}</h4>
+      {% csrf_token %}
       <h5>{% trans 'Weekly' %}</h5>
       <form>
-        {% csrf_token %}
         <div class="form-group">
           <label for="w_distance">{% trans 'Distance' %} ({% if user.details.si_units %}km{% else %}mi{% endif %})</label>
           <input type="number" class="form-control" data-action="goals" name="week_distance" id="w_distance" min="0" max="5000" step="10" value="{{ request.user.goals.weekly_distance }}">
@@ -79,7 +79,6 @@
 
       <h5>{% trans 'Monthly' %}</h5>
       <form>
-        {% csrf_token %}
         <div class="form-group">
           <label for="w_distance">{% trans 'Distance' %} ({% if user.details.si_units %}km{% else %}mi{% endif %})</label>
           <input type="number" class="form-control" data-action="goals" name="month_distance" id="w_distance" min="0" max="5000" step="10" value="{{ request.user.goals.monthly_distance }}">
@@ -92,7 +91,6 @@
 
       <h5>{% trans 'Yearly' %}</h5>
       <form>
-        {% csrf_token %}
         <div class="form-group">
           <label for="w_distance">{% trans 'Distance' %} ({% if user.details.si_units %}km{% else %}mi{% endif %})</label>
           <input type="number" class="form-control" data-action="goals" name="year_distance" id="w_distance" min="0" max="5000" step="10" value="{{ request.user.goals.yearly_distance }}">

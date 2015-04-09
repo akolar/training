@@ -7,14 +7,13 @@ getCookie = (name) ->
             c = $.trim cookie
 
             if (c.substring 0, (name.length + 1)) == (name + '=')
-                cookieValue = decodeURIComponent cookie.substring(name.length + 2)
+                cookieValue = decodeURIComponent cookie.substring(name.length + 1)
                 break
 
     return cookieValue
 
 
 csrftoken = getCookie('csrftoken')
-
 
 csrfSafeMethod = (method) ->
     return /^(GET|HEAD|OPTIONS|TRACE)$/.test method;
@@ -23,7 +22,7 @@ csrfSafeMethod = (method) ->
 $.ajaxSetup
     beforeSend: (xhr, settings) ->
         if !csrfSafeMethod settings.type and not this.crossDomain
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            xhr.setRequestHeader("X-CSRFToken", csrftoken)
 
 
 if SI_UNITS?

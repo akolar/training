@@ -8,7 +8,7 @@ from django.views.decorators.http import require_http_methods
 def set(request, target):
     """Sets user's goal.
     Arguments:
-        target: target in ['weekly', 'monthly', 'yearly']
+        target: target in ['week', 'month', 'year']
     """
 
     objective = request.PUT.get('objective')
