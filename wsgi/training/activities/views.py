@@ -180,6 +180,8 @@ def _summarize(activities, si_units=True):
 def overview(request):
     """Renders the overview of all activities."""
 
+    print request.LANGUAGE_CODE
+
     now_ = now()
 
     start = now_ - timedelta(days=(now_.weekday() + 21))

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-07 14:43+0000\n"
+"POT-Creation-Date: 2015-04-09 18:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,271 +17,271 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: activities/forms.py:12
+#: activities/forms.py:14
 msgid "File containing the activity track."
 msgstr ""
 
-#: activities/models.py:17
+#: activities/models.py:19
 msgid "Not set"
 msgstr "Ni nastavljen"
 
-#: activities/models.py:18
+#: activities/models.py:20
 msgid "Ride"
 msgstr "Kolesarjenje"
 
-#: activities/models.py:19
+#: activities/models.py:21
 msgid "Run"
 msgstr "Tek"
 
-#: activities/models.py:20
+#: activities/models.py:22
 msgid "Swim"
 msgstr "Plavanje"
 
-#: activities/models.py:21
+#: activities/models.py:23
 msgid "Hike"
 msgstr "Pohodništvo"
 
-#: activities/models.py:22
+#: activities/models.py:24
 msgid "Walk"
 msgstr "Sprehod"
 
-#: activities/models.py:26
+#: activities/models.py:29
 msgid "Alpine Ski"
 msgstr "Alpsko smučanje"
 
-#: activities/models.py:27
+#: activities/models.py:30
 msgid "Backcountry Ski"
 msgstr "Turno smučanje"
 
-#: activities/models.py:28
+#: activities/models.py:31
 msgid "Canoeing"
 msgstr "Kanu"
 
-#: activities/models.py:29
+#: activities/models.py:32
 msgid "Cross-country Skiing"
 msgstr "Tek na smučeh"
 
-#: activities/models.py:30
+#: activities/models.py:33
 msgid "Crossfit"
 msgstr ""
 
-#: activities/models.py:31
+#: activities/models.py:34
 msgid "Elliptical"
 msgstr "Orbitrek"
 
-#: activities/models.py:32
+#: activities/models.py:35
 msgid "Ice Skate"
 msgstr "Drsanje"
 
-#: activities/models.py:33
+#: activities/models.py:36
 msgid "Inline Skate"
 msgstr "Rolanje"
 
-#: activities/models.py:34
+#: activities/models.py:37
 msgid "Kayaking"
 msgstr "Kajak"
 
-#: activities/models.py:35
+#: activities/models.py:38
 msgid "Kitesurf"
 msgstr "Kiteanje"
 
-#: activities/models.py:36
+#: activities/models.py:39
 msgid "Nordic Ski"
 msgstr "Nordijsko smučanje"
 
-#: activities/models.py:37
+#: activities/models.py:40
 msgid "Rock Climbing"
 msgstr "Plezanje"
 
-#: activities/models.py:38
+#: activities/models.py:41
 msgid "Roller Ski"
 msgstr "Tek na poletnih smučeh"
 
-#: activities/models.py:39
+#: activities/models.py:42
 msgid "Rowing"
 msgstr "Veslanje"
 
-#: activities/models.py:40
+#: activities/models.py:43
 msgid "Snowboard"
 msgstr "Bordanje"
 
-#: activities/models.py:41
+#: activities/models.py:44
 msgid "Snowshoe"
 msgstr "Hoja po snegu"
 
-#: activities/models.py:42
+#: activities/models.py:45
 msgid "Stair-Stepper"
 msgstr "Hoja po stopnicah"
 
-#: activities/models.py:43
+#: activities/models.py:46
 msgid "Stand Up Padding"
 msgstr "Veslanje na deski"
 
-#: activities/models.py:44
+#: activities/models.py:47
 msgid "Surfing"
 msgstr "Surfanje"
 
-#: activities/models.py:45
+#: activities/models.py:48
 msgid "Weight Training"
 msgstr "Trening z utežmi"
 
-#: activities/models.py:46
+#: activities/models.py:49
 msgid "Workout"
 msgstr "Trening"
 
-#: activities/models.py:47
+#: activities/models.py:50
 msgid "Yoga"
 msgstr "Joga"
 
-#: activities/models.py:51
+#: activities/models.py:55
 msgid "Not specified"
 msgstr "Ni določen"
 
-#: activities/models.py:52
+#: activities/models.py:56
 msgid "Endurance"
 msgstr "Vzdržljivost"
 
-#: activities/models.py:53
+#: activities/models.py:57
 msgid "Muscular endurance"
 msgstr "Mišična vzdržljivost"
 
-#: activities/models.py:54
+#: activities/models.py:58
 msgid "Anaerobic endurance"
 msgstr "Anaerobna vzdržljivost"
 
-#: activities/models.py:55
+#: activities/models.py:59
 msgid "Technique"
 msgstr "Tehnika"
 
-#: activities/models.py:56
+#: activities/models.py:60
 msgid "Power"
 msgstr "Moč"
 
-#: activities/models.py:57
+#: activities/models.py:61
 msgid "Strength"
 msgstr "Učinkovitost"
 
-#: activities/models.py:58
+#: activities/models.py:62
 msgid "Recovery"
 msgstr "Aktivni počitek"
 
-#: activities/models.py:63
+#: activities/models.py:67
 msgid "timestamp"
 msgstr "čas"
 
-#: activities/models.py:64 activities/models.py:246
+#: activities/models.py:68 activities/models.py:304
 msgid "sport"
 msgstr "šport"
 
-#: activities/models.py:65 templates/activities/view-all.html:25
+#: activities/models.py:69 templates/activities/view-all.html:25
 msgid "Title"
 msgstr "Naslov"
 
-#: activities/models.py:66
+#: activities/models.py:70
 msgid "comments"
 msgstr "Komentarji"
 
-#: activities/models.py:69
+#: activities/models.py:73
 msgid "primary objective"
 msgstr "primarni cilj"
 
-#: activities/models.py:71 templates/activities/view-all.html:32
+#: activities/models.py:75 templates/activities/view-all.html:32
 msgid "RPE"
 msgstr "RPE"
 
-#: activities/models.py:74
+#: activities/models.py:78
 msgid "elapsed time"
 msgstr "trajanje"
 
-#: activities/models.py:75
+#: activities/models.py:79
 msgid "moving time"
 msgstr "čas premikanja"
 
-#: activities/models.py:76
+#: activities/models.py:80
 msgid "distance"
 msgstr "razdalja"
 
-#: activities/models.py:77
+#: activities/models.py:81
 msgid "elevation gain"
 msgstr "višinska razlika"
 
-#: activities/models.py:78
+#: activities/models.py:82
 msgid "equipment"
 msgstr "pripomočki"
 
-#: activities/models.py:81
+#: activities/models.py:85
 msgid "average speed"
 msgstr "povprečna hitrost"
 
-#: activities/models.py:82
+#: activities/models.py:86
 msgid "maximum speed"
 msgstr "največja hitrost"
 
-#: activities/models.py:83
+#: activities/models.py:87
 msgid "average heart rate"
 msgstr "povprečen srčni utrip"
 
-#: activities/models.py:84 health/models.py:12
+#: activities/models.py:88 health/models.py:14
 msgid "maximum heart rate"
 msgstr "najvišji srčni utrip"
 
-#: activities/models.py:85
+#: activities/models.py:89
 msgid "maximum temperature"
 msgstr "najvišja temperatura"
 
-#: activities/models.py:86
+#: activities/models.py:90
 msgid "average temperature"
 msgstr "povprečna temperatura"
 
-#: activities/models.py:245
+#: activities/models.py:303
 msgid "name"
 msgstr "naziv"
 
-#: activities/models.py:247
+#: activities/models.py:305
 msgid "comment"
 msgstr "komentar"
 
-#: goals/models.py:11
+#: goals/models.py:13
 msgid "weekly goal (distance)"
 msgstr "tedenski cilj (razdalja)"
 
-#: goals/models.py:12
+#: goals/models.py:14
 msgid "weekly goal (time)"
 msgstr "tedenski cilj (čas)"
 
-#: goals/models.py:14
+#: goals/models.py:16
 msgid "monthly goal (distance)"
 msgstr "mesečni cilj (razdalja)"
 
-#: goals/models.py:15
+#: goals/models.py:17
 msgid "monthly goal (time)"
 msgstr "mesečni cilj (čas)"
 
-#: goals/models.py:17
+#: goals/models.py:19
 msgid "yearly goal (distance)"
 msgstr "letni cilj (razdalja)"
 
-#: goals/models.py:18
+#: goals/models.py:20
 msgid "yearly goal (time)"
 msgstr "letni cilj (čas)"
 
-#: health/models.py:11
+#: health/models.py:13
 msgid "resting hear rate"
 msgstr "srčni utrip v mirovanju"
 
-#: health/models.py:13
+#: health/models.py:15
 msgid "lactate threshold heart rate"
 msgstr "srčni utrip na laktalnem pragu"
 
-#: health/models.py:15
+#: health/models.py:17
 msgid "maximum power"
 msgstr "največja moč"
 
-#: health/models.py:16
+#: health/models.py:18
 msgid "functional threshold power"
 msgstr "moč na laktalnem pragu"
 
-#: health/models.py:18
+#: health/models.py:20
 msgid "height"
 msgstr "višina"
 
@@ -453,7 +453,7 @@ msgstr "Trening :: Uredi ::"
 
 #: templates/activities/edit.html:21 templates/activities/manual-ul.html:33
 #: templates/activities/upload.html:21
-#: templates/settings/equipment_add.html:19
+#: templates/settings/equipment_add.html:18
 msgid "Save"
 msgstr "Shrani"
 
@@ -531,7 +531,7 @@ msgid "# others"
 msgstr "Število ostalih aktivnosti"
 
 #: templates/activities/summary.html:37 templates/activities/summary.html:71
-#: templates/activities/summary.html:84 templates/activities/summary.html:97
+#: templates/activities/summary.html:83 templates/activities/summary.html:95
 #: templates/activities/view.html:16
 msgid "Distance"
 msgstr "Razdalja"
@@ -572,12 +572,12 @@ msgstr "Povprečna vrednost RPE"
 msgid "Weekly chart"
 msgstr "Tedenska preglednica"
 
-#: templates/activities/summary.html:67
+#: templates/activities/summary.html:68
 msgid "Weekly"
 msgstr "Tedenski"
 
-#: templates/activities/summary.html:75 templates/activities/summary.html:88
-#: templates/activities/summary.html:101
+#: templates/activities/summary.html:75 templates/activities/summary.html:87
+#: templates/activities/summary.html:99
 msgid "Time (hours)"
 msgstr "Čas (ure)"
 
@@ -585,7 +585,7 @@ msgstr "Čas (ure)"
 msgid "Monthly"
 msgstr "Mesečni"
 
-#: templates/activities/summary.html:93
+#: templates/activities/summary.html:92
 msgid "Yearly"
 msgstr "Letni"
 
@@ -698,31 +698,35 @@ msgstr "Komentarji"
 msgid "Log in"
 msgstr "Prijava"
 
-#: templates/base/user_menu.html:4
+#: templates/base/user_menu.html:7
 msgid "Upload"
 msgstr "Naloži"
 
-#: templates/base/user_menu.html:12
+#: templates/base/user_menu.html:15
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: templates/base/user_menu.html:13
+#: templates/base/user_menu.html:16
 msgid "Logout"
 msgstr "Odjava"
 
-#: templates/health/settings.html:9 templates/settings/_base.html:15
+#: templates/base/user_menu.html:20
+msgid "Language"
+msgstr "Jezik"
+
+#: templates/health/settings.html:7 templates/settings/_base.html:15
 msgid "Performance"
 msgstr "Učinkovitost"
 
-#: templates/health/settings.html:16
+#: templates/health/settings.html:14
 msgid "Height"
 msgstr "Višina"
 
-#: templates/health/settings.html:27
+#: templates/health/settings.html:25
 msgid "Max HR"
 msgstr "Najvišji srčni utrip"
 
-#: templates/health/settings.html:38
+#: templates/health/settings.html:36
 msgid "LT HR"
 msgstr "Srčni utrip na laktalnem pragu"
 
@@ -766,7 +770,7 @@ msgstr "Motivirajte se za doseganje zastavljenih ciljev"
 msgid "Training :: Settings"
 msgstr "Trening :: Nastavitve"
 
-#: templates/settings/_base.html:14 templates/settings/me.html:10
+#: templates/settings/_base.html:14 templates/settings/me.html:8
 msgid "Me"
 msgstr "Jaz"
 
@@ -774,87 +778,87 @@ msgstr "Jaz"
 msgid "Equipment"
 msgstr "Pripomočki"
 
-#: templates/settings/_base.html:17 templates/settings/account.html:11
+#: templates/settings/_base.html:17 templates/settings/account.html:8
 msgid "Account"
 msgstr "Račun"
 
-#: templates/settings/account.html:20
+#: templates/settings/account.html:17
 msgid "Email"
 msgstr "E-pošta"
 
-#: templates/settings/account.html:30
+#: templates/settings/account.html:27
 msgid "Password"
 msgstr "Geslo"
 
-#: templates/settings/account.html:32
+#: templates/settings/account.html:29
 msgid "Current password"
 msgstr "Trenutno geslo"
 
-#: templates/settings/account.html:33
+#: templates/settings/account.html:30
 msgid "New password"
 msgstr "Novo geslo"
 
-#: templates/settings/account.html:34
+#: templates/settings/account.html:31
 msgid "Confirm new password"
 msgstr "Potrdite novo geslo"
 
-#: templates/settings/account.html:35
+#: templates/settings/account.html:32
 msgid "Set password"
 msgstr "Nastavi geslo"
 
-#: templates/settings/account.html:39
+#: templates/settings/account.html:36
 msgid "Invalid current password"
 msgstr "Nepravilno trenutno geslo"
 
-#: templates/settings/account.html:40
+#: templates/settings/account.html:37
 msgid "Passwords do not match"
 msgstr "Gesli se ne ujemata"
 
-#: templates/settings/account.html:46
+#: templates/settings/account.html:43
 msgid "Units"
 msgstr "Enote"
 
-#: templates/settings/account.html:49
+#: templates/settings/account.html:46
 msgid "Metric"
 msgstr "Metrični sistem"
 
-#: templates/settings/account.html:50
+#: templates/settings/account.html:47
 msgid "Imperial"
 msgstr "Imperialni sistem"
 
-#: templates/settings/equipment.html:10
+#: templates/settings/equipment.html:9
 msgid "Bikes"
 msgstr "Kolesa"
 
-#: templates/settings/equipment.html:32
+#: templates/settings/equipment.html:31
 msgid "Shoes"
 msgstr "Čevlji"
 
-#: templates/settings/equipment.html:54
+#: templates/settings/equipment.html:53
 msgid "Other"
 msgstr "Ostalo"
 
-#: templates/settings/me.html:16
+#: templates/settings/me.html:14
 msgid "Name"
 msgstr "Ime"
 
-#: templates/settings/me.html:26
+#: templates/settings/me.html:24
 msgid "Gender"
 msgstr "Spol"
 
-#: templates/settings/me.html:29
+#: templates/settings/me.html:27
 msgid "Female"
 msgstr "Ženski"
 
-#: templates/settings/me.html:30
+#: templates/settings/me.html:28
 msgid "Male"
 msgstr "Moški"
 
-#: templates/settings/me.html:31
+#: templates/settings/me.html:29
 msgid "I don't want to tell"
 msgstr "Ne želim povedati"
 
-#: templates/settings/me.html:42
+#: templates/settings/me.html:40
 msgid "Avatar"
 msgstr "Avatar"
 
@@ -867,42 +871,42 @@ msgstr ""
 "Za prijavo na %(site_name)s boste uporabili vaš račun %(provider_name)s \n"
 ".Kot zadnji korak izpolnite naslednji obrazec:"
 
-#: training/settings.py:137
+#: training/settings.py:138
 msgid "English"
 msgstr "Angleški"
 
-#: training/settings.py:138
+#: training/settings.py:139
 msgid "Slovene"
 msgstr "Slovenski"
 
-#: user_settings/models.py:14
+#: user_settings/models.py:16
 msgid "unknown"
 msgstr "neznan"
 
-#: user_settings/models.py:15
+#: user_settings/models.py:17
 msgid "male"
 msgstr "moški"
 
-#: user_settings/models.py:16
+#: user_settings/models.py:18
 msgid "female"
 msgstr "ženski"
 
-#: user_settings/models.py:19
+#: user_settings/models.py:21
 msgid "Metric (kilometers, kilograms)"
 msgstr "Metrični (kilometri, kilogrami)"
 
-#: user_settings/models.py:20
+#: user_settings/models.py:22
 msgid "Imperial (miles, pounds)"
 msgstr "Imperialni (milije, unče)"
 
-#: user_settings/models.py:25
+#: user_settings/models.py:27
 msgid "gender"
 msgstr "spol"
 
-#: user_settings/models.py:26
+#: user_settings/models.py:28
 msgid "units"
 msgstr "enote"
 
-#: user_settings/models.py:28
+#: user_settings/models.py:30
 msgid "avatar"
 msgstr "avatar"

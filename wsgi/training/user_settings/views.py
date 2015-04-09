@@ -1,12 +1,14 @@
 import re
 
 from django.shortcuts import render_to_response, render, redirect
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 from django.http import Http404
 from django.template import RequestContext
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_protect
+from django.utils import translation
 
 from activities.forms import EquipmentForm
 from activities.models import Equipment
@@ -180,3 +182,22 @@ def equipment_add(request, type_, id_=None):
         template['form'] = EquipmentForm()
 
     return render(request, 'settings/equipment_add.html', template)
+
+
+def set_language(request, language):
+    if request.method == 'GET':
+        next_ = request.GET.get('next', '/')
+    else:
+        next_ = '/'
+
+    response = HttpResponseRedirect(next_)
+
+    if translation.check_for_language(language):
+        translation.activate(language)
+
+        if hasattr(request, 'session'):
+            request.session[translation.LANGUAGE_SESSION_KEY] = language
+
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
+
+    return response
