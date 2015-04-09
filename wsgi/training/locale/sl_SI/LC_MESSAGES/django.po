@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-07 14:42+0000\n"
+"POT-Creation-Date: 2015-04-07 14:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,43 +23,43 @@ msgstr ""
 
 #: activities/models.py:17
 msgid "Not set"
-msgstr ""
+msgstr "Ni nastavljen"
 
 #: activities/models.py:18
 msgid "Ride"
-msgstr ""
+msgstr "Kolesarjenje"
 
 #: activities/models.py:19
 msgid "Run"
-msgstr ""
+msgstr "Tek"
 
 #: activities/models.py:20
 msgid "Swim"
-msgstr ""
+msgstr "Plavanje"
 
 #: activities/models.py:21
 msgid "Hike"
-msgstr ""
+msgstr "Pohodništvo"
 
 #: activities/models.py:22
 msgid "Walk"
-msgstr ""
+msgstr "Sprehod"
 
 #: activities/models.py:26
 msgid "Alpine Ski"
-msgstr ""
+msgstr "Alpsko smučanje"
 
 #: activities/models.py:27
 msgid "Backcountry Ski"
-msgstr ""
+msgstr "Turno smučanje"
 
 #: activities/models.py:28
 msgid "Canoeing"
-msgstr ""
+msgstr "Kanu"
 
 #: activities/models.py:29
 msgid "Cross-country Skiing"
-msgstr ""
+msgstr "Tek na smučeh"
 
 #: activities/models.py:30
 msgid "Crossfit"
@@ -67,223 +67,223 @@ msgstr ""
 
 #: activities/models.py:31
 msgid "Elliptical"
-msgstr ""
+msgstr "Orbitrek"
 
 #: activities/models.py:32
 msgid "Ice Skate"
-msgstr ""
+msgstr "Drsanje"
 
 #: activities/models.py:33
 msgid "Inline Skate"
-msgstr ""
+msgstr "Rolanje"
 
 #: activities/models.py:34
 msgid "Kayaking"
-msgstr ""
+msgstr "Kajak"
 
 #: activities/models.py:35
 msgid "Kitesurf"
-msgstr ""
+msgstr "Kiteanje"
 
 #: activities/models.py:36
 msgid "Nordic Ski"
-msgstr ""
+msgstr "Nordijsko smučanje"
 
 #: activities/models.py:37
 msgid "Rock Climbing"
-msgstr ""
+msgstr "Plezanje"
 
 #: activities/models.py:38
 msgid "Roller Ski"
-msgstr ""
+msgstr "Tek na poletnih smučeh"
 
 #: activities/models.py:39
 msgid "Rowing"
-msgstr ""
+msgstr "Veslanje"
 
 #: activities/models.py:40
 msgid "Snowboard"
-msgstr ""
+msgstr "Bordanje"
 
 #: activities/models.py:41
 msgid "Snowshoe"
-msgstr ""
+msgstr "Hoja po snegu"
 
 #: activities/models.py:42
 msgid "Stair-Stepper"
-msgstr ""
+msgstr "Hoja po stopnicah"
 
 #: activities/models.py:43
 msgid "Stand Up Padding"
-msgstr ""
+msgstr "Veslanje na deski"
 
 #: activities/models.py:44
 msgid "Surfing"
-msgstr ""
+msgstr "Surfanje"
 
 #: activities/models.py:45
 msgid "Weight Training"
-msgstr ""
+msgstr "Trening z utežmi"
 
 #: activities/models.py:46
 msgid "Workout"
-msgstr ""
+msgstr "Trening"
 
 #: activities/models.py:47
 msgid "Yoga"
-msgstr ""
+msgstr "Joga"
 
 #: activities/models.py:51
 msgid "Not specified"
-msgstr ""
+msgstr "Ni določen"
 
 #: activities/models.py:52
 msgid "Endurance"
-msgstr ""
+msgstr "Vzdržljivost"
 
 #: activities/models.py:53
 msgid "Muscular endurance"
-msgstr ""
+msgstr "Mišična vzdržljivost"
 
 #: activities/models.py:54
 msgid "Anaerobic endurance"
-msgstr ""
+msgstr "Anaerobna vzdržljivost"
 
 #: activities/models.py:55
 msgid "Technique"
-msgstr ""
+msgstr "Tehnika"
 
 #: activities/models.py:56
 msgid "Power"
-msgstr ""
+msgstr "Moč"
 
 #: activities/models.py:57
 msgid "Strength"
-msgstr ""
+msgstr "Učinkovitost"
 
 #: activities/models.py:58
 msgid "Recovery"
-msgstr ""
+msgstr "Aktivni počitek"
 
 #: activities/models.py:63
 msgid "timestamp"
-msgstr ""
+msgstr "čas"
 
 #: activities/models.py:64 activities/models.py:246
 msgid "sport"
-msgstr ""
+msgstr "šport"
 
 #: activities/models.py:65 templates/activities/view-all.html:25
 msgid "Title"
-msgstr ""
+msgstr "Naslov"
 
 #: activities/models.py:66
 msgid "comments"
-msgstr ""
+msgstr "Komentarji"
 
 #: activities/models.py:69
 msgid "primary objective"
-msgstr ""
+msgstr "primarni cilj"
 
 #: activities/models.py:71 templates/activities/view-all.html:32
 msgid "RPE"
-msgstr ""
+msgstr "RPE"
 
 #: activities/models.py:74
 msgid "elapsed time"
-msgstr ""
+msgstr "trajanje"
 
 #: activities/models.py:75
 msgid "moving time"
-msgstr ""
+msgstr "čas premikanja"
 
 #: activities/models.py:76
 msgid "distance"
-msgstr ""
+msgstr "razdalja"
 
 #: activities/models.py:77
 msgid "elevation gain"
-msgstr ""
+msgstr "višinska razlika"
 
 #: activities/models.py:78
 msgid "equipment"
-msgstr ""
+msgstr "pripomočki"
 
 #: activities/models.py:81
 msgid "average speed"
-msgstr ""
+msgstr "povprečna hitrost"
 
 #: activities/models.py:82
 msgid "maximum speed"
-msgstr ""
+msgstr "največja hitrost"
 
 #: activities/models.py:83
 msgid "average heart rate"
-msgstr ""
+msgstr "povprečen srčni utrip"
 
 #: activities/models.py:84 health/models.py:12
 msgid "maximum heart rate"
-msgstr ""
+msgstr "najvišji srčni utrip"
 
 #: activities/models.py:85
 msgid "maximum temperature"
-msgstr ""
+msgstr "najvišja temperatura"
 
 #: activities/models.py:86
 msgid "average temperature"
-msgstr ""
+msgstr "povprečna temperatura"
 
 #: activities/models.py:245
 msgid "name"
-msgstr ""
+msgstr "naziv"
 
 #: activities/models.py:247
 msgid "comment"
-msgstr ""
+msgstr "komentar"
 
 #: goals/models.py:11
 msgid "weekly goal (distance)"
-msgstr ""
+msgstr "tedenski cilj (razdalja)"
 
 #: goals/models.py:12
 msgid "weekly goal (time)"
-msgstr ""
+msgstr "tedenski cilj (čas)"
 
 #: goals/models.py:14
 msgid "monthly goal (distance)"
-msgstr ""
+msgstr "mesečni cilj (razdalja)"
 
 #: goals/models.py:15
 msgid "monthly goal (time)"
-msgstr ""
+msgstr "mesečni cilj (čas)"
 
 #: goals/models.py:17
 msgid "yearly goal (distance)"
-msgstr ""
+msgstr "letni cilj (razdalja)"
 
 #: goals/models.py:18
 msgid "yearly goal (time)"
-msgstr ""
+msgstr "letni cilj (čas)"
 
 #: health/models.py:11
 msgid "resting hear rate"
-msgstr ""
+msgstr "srčni utrip v mirovanju"
 
 #: health/models.py:13
 msgid "lactate threshold heart rate"
-msgstr ""
+msgstr "srčni utrip na laktalnem pragu"
 
 #: health/models.py:15
 msgid "maximum power"
-msgstr ""
+msgstr "največja moč"
 
 #: health/models.py:16
 msgid "functional threshold power"
-msgstr ""
+msgstr "moč na laktalnem pragu"
 
 #: health/models.py:18
 msgid "height"
-msgstr ""
+msgstr "višina"
 
 #: templates/account/email/email_confirmation_message.txt:1
 #, python-format
@@ -292,12 +292,16 @@ msgid ""
 "\n"
 "To confirm this is correct, go to %(activate_url)s\n"
 msgstr ""
+"Uporabnik %(user_display)s na strani %(site_name)s je za prijavo uporabil ta "
+"naslov.\n"
+"\n"
+"Da naslov potrdite, obiščite %(activate_url)s\n"
 
 #: templates/account/email/email_confirmation_subject.txt:3
 #: templates/account/email_confirm.html:7
 #: templates/account/email_confirm.html:11
 msgid "Confirm E-mail Address"
-msgstr ""
+msgstr "Potrdite e-poštni naslov"
 
 #: templates/account/email_confirm.html:17
 #, python-format
@@ -305,10 +309,12 @@ msgid ""
 "Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
 "address for user %(user_display)s."
 msgstr ""
+"Prosimo potrdite da <a href=\"mailto:%(email)s\">%(email)s</a> je poštni "
+"naslov uporabnika %(user_display)s."
 
 #: templates/account/email_confirm.html:21
 msgid "Confirm"
-msgstr ""
+msgstr "Potrdi"
 
 #: templates/account/email_confirm.html:28
 #, python-format
@@ -316,87 +322,91 @@ msgid ""
 "This e-mail confirmation link expired or is invalid. Please <a href="
 "\"%(email_url)s\">issue a new e-mail confirmation request</a>."
 msgstr ""
+"Povezava za aktivacijo je neveljavna. Prosimo <a href=\"%(email_url)s"
+"\">zaprosite za novo povezavo za</a>."
 
 #: templates/account/login.html:7
 msgid "Training :: Sign in"
-msgstr ""
+msgstr "Trening :: Prijava"
 
 #: templates/account/login.html:16 templates/account/login.html.py:30
 #: templates/account/signup.html:32
 msgid "Sign in"
-msgstr ""
+msgstr "Prijava"
 
 #: templates/account/login.html:19
 msgid "Sign in with Google"
-msgstr ""
+msgstr "Prijavi se z računom Google"
 
 #: templates/account/login.html:22
 msgid "Sign in with Facebook"
-msgstr ""
+msgstr "Prijavi se z računom Facebook"
 
 #: templates/account/login.html:25 templates/account/signup.html:22
 msgid "or"
-msgstr ""
+msgstr "ali"
 
 #: templates/account/login.html:34
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Še nimate računa?"
 
 #: templates/account/login.html:34 templates/account/signup.html:13
 #: templates/account/signup.html.py:28 templates/socialaccount/signup.html:14
 #: templates/socialaccount/signup.html:26
 msgid "Sign up"
-msgstr ""
+msgstr "Registracija"
 
 #: templates/account/login.html:35
 msgid "Forgot your password?"
-msgstr ""
+msgstr "Pozabljeno geslo"
 
 #: templates/account/password_reset.html:7
 msgid "Training :: Reset password"
-msgstr ""
+msgstr "Trening :: Pozabljeno geslo"
 
 #: templates/account/password_reset.html:13
 #: templates/account/password_reset.html:21
 msgid "Reset password"
-msgstr ""
+msgstr "Ponastavi geslo"
 
 #: templates/account/password_reset.html:14
 msgid ""
 "Forgot your password? Enter your email address below, and we'll send you an "
 "e-mail allowing you to reset it."
 msgstr ""
+"Ste pozabili geslo? Vnesite vaš poštni naslov in poslali vam bomo povezavo "
+"za njegovo ponastavitev."
 
 #: templates/account/password_reset.html:20
 msgid "Email address"
-msgstr ""
+msgstr "E-poštni naslov"
 
 #: templates/account/password_reset.html:25
 msgid "Please contact us if you have any trouble resetting your password."
-msgstr ""
+msgstr "V primeru težav pri ponastavitvi gesla, nas kontaktirajte."
 
 #: templates/account/signup.html:7 templates/socialaccount/signup.html:7
 msgid "Training :: Sign up"
-msgstr ""
+msgstr "Trening :: Registracija"
 
 #: templates/account/signup.html:16
 msgid "Sign up with Google"
-msgstr ""
+msgstr "Registracija z računom Google"
 
 #: templates/account/signup.html:19
 msgid "Sign up with Facebook"
-msgstr ""
+msgstr "Registracija z računom Facebook"
 
 #: templates/account/signup.html:32
 msgid "Already have an account?"
-msgstr ""
+msgstr "Račun že imam!"
 
 #: templates/account/verification_sent.html:5
 #: templates/account/verification_sent.html:8
 #: templates/account/verified_email_required.html:6
 #: templates/account/verified_email_required.html:9
 msgid "Verify Your E-mail Address"
-msgstr ""
+msgstr "Potrdite svoj e-poštni naslov"
 
 #: templates/account/verification_sent.html:10
 msgid ""
@@ -404,6 +414,9 @@ msgid ""
 "finalize the signup process. Please contact us if you do not receive it "
 "within a few minutes."
 msgstr ""
+"Poslali smo vam e-pošto za verifikacijo. Sledite priloženi povezavi za "
+"dokončanje registracije. Če povezave ne prejmete v roku naslednjih nekaj "
+"minut, nas kontaktirajte."
 
 #: templates/account/verified_email_required.html:13
 msgid ""
@@ -432,414 +445,418 @@ msgstr ""
 #: templates/activities/view-base.html:8 templates/activities/view.html:7
 #: templates/activities/zones.html:7
 msgid "Training :: "
-msgstr ""
+msgstr "Trening :: "
 
 #: templates/activities/edit.html:7
 msgid "Training :: Edit :: "
-msgstr ""
+msgstr "Trening :: Uredi ::"
 
 #: templates/activities/edit.html:21 templates/activities/manual-ul.html:33
 #: templates/activities/upload.html:21
 #: templates/settings/equipment_add.html:19
 msgid "Save"
-msgstr ""
+msgstr "Shrani"
 
 #: templates/activities/manual-ul.html:7 templates/activities/upload.html:7
 msgid "Training :: Upload"
-msgstr ""
+msgstr "Trening :: Naloži"
 
 #: templates/activities/overview.html:6 templates/activities/summary.html:6
 #: templates/base/navbar_auth.html:8
 msgid "Summary"
-msgstr ""
+msgstr "Povzetek"
 
 #: templates/activities/overview.html:18
 msgid "Recent activities"
-msgstr ""
+msgstr "Nedavne aktivnosti"
 
 #: templates/activities/overview.html:46
 msgid "View more"
-msgstr ""
+msgstr "Poglej več"
 
 #: templates/activities/overview.html:50 templates/activities/summary.html:66
 msgid "Goals"
-msgstr ""
+msgstr "Cilji"
 
 #: templates/activities/overview.html:77
 msgid "You have no goals set for yourself. Set them here."
-msgstr ""
+msgstr "Nastavljenih nimate nobenih ciljev. Nastavite jih tukaj!"
 
 #: templates/activities/splits.html:25
 msgid "Distance/time"
-msgstr ""
+msgstr "Razdalja/čas"
 
 #: templates/activities/splits.html:33 templates/activities/view-all.html:29
 msgid "Speed"
-msgstr ""
+msgstr "Hitrost"
 
 #: templates/activities/splits.html:41 templates/activities/summary.html:53
 msgid "Elevation gain"
-msgstr ""
+msgstr "Višinska razlika"
 
 #: templates/activities/splits.html:51
 msgid "Heart rate"
-msgstr ""
+msgstr "Srčni utrip"
 
 #: templates/activities/splits.html:61
 msgid "Cadence"
-msgstr ""
+msgstr "Kadenca"
 
 #: templates/activities/summary.html:21
 msgid "Weekly summary"
-msgstr ""
+msgstr "Tedenski povzetek"
 
 #: templates/activities/summary.html:22
 msgid "Monthly summary"
-msgstr ""
+msgstr "Mesečni povzetek"
 
 #: templates/activities/summary.html:23
 msgid "Yearly summary"
-msgstr ""
+msgstr "Letni povzetek"
 
 #: templates/activities/summary.html:29
 msgid "# activities"
-msgstr ""
+msgstr "Število aktivnosti"
 
 #: templates/activities/summary.html:31
 msgid "# runs"
-msgstr ""
+msgstr "Število tekov"
 
 #: templates/activities/summary.html:33
 msgid "# rides"
-msgstr ""
+msgstr "Število kolesarjenj"
 
 #: templates/activities/summary.html:35
 msgid "# others"
-msgstr ""
+msgstr "Število ostalih aktivnosti"
 
 #: templates/activities/summary.html:37 templates/activities/summary.html:71
 #: templates/activities/summary.html:84 templates/activities/summary.html:97
 #: templates/activities/view.html:16
 msgid "Distance"
-msgstr ""
+msgstr "Razdalja"
 
 #: templates/activities/summary.html:39
 msgid "Longest activity"
-msgstr ""
+msgstr "Najdaljša aktivnost"
 
 #: templates/activities/summary.html:41
 msgid "Avg. duration"
-msgstr ""
+msgstr "Povprečno trajanje"
 
 #: templates/activities/summary.html:43 templates/activities/view-all.html:28
 msgid "Time"
-msgstr ""
+msgstr "Čas"
 
 #: templates/activities/summary.html:45
 msgid "Farthest activity"
-msgstr ""
+msgstr "Aktivnost z največjo razdaljo"
 
 #: templates/activities/summary.html:47
 msgid "Avg. distance"
-msgstr ""
+msgstr "Povprečna razdalja"
 
 #: templates/activities/summary.html:49 templates/activities/view.html:38
 msgid "Max. speed"
-msgstr ""
+msgstr "Največja hitrost"
 
 #: templates/activities/summary.html:51
 msgid "Avg. speed"
-msgstr ""
+msgstr "Povprečna hitrost"
 
 #: templates/activities/summary.html:55
 msgid "Avg. RPE"
-msgstr ""
+msgstr "Povprečna vrednost RPE"
 
 #: templates/activities/summary.html:61
 msgid "Weekly chart"
-msgstr ""
+msgstr "Tedenska preglednica"
 
 #: templates/activities/summary.html:67
 msgid "Weekly"
-msgstr ""
+msgstr "Tedenski"
 
 #: templates/activities/summary.html:75 templates/activities/summary.html:88
 #: templates/activities/summary.html:101
 msgid "Time (hours)"
-msgstr ""
+msgstr "Čas (ure)"
 
 #: templates/activities/summary.html:80
 msgid "Monthly"
-msgstr ""
+msgstr "Mesečni"
 
 #: templates/activities/summary.html:93
 msgid "Yearly"
-msgstr ""
+msgstr "Letni"
 
 #: templates/activities/upload.html:26
 msgid "For a manual entry click here."
-msgstr ""
+msgstr "Za ročni vnos kliknite tukaj."
 
 #: templates/activities/view-all.html:10
 #: templates/activities/view-base.html:18 templates/base/navbar_auth.html:7
 msgid "Activities"
-msgstr ""
+msgstr "Aktivnosti"
 
 #: templates/activities/view-all.html:16
 msgid "Upload failed. Similar activity already exists."
-msgstr ""
+msgstr "Nalaganje ni bilo uspešno. Podobna aktivnost že obstaja."
 
 #: templates/activities/view-all.html:23
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: templates/activities/view-all.html:24
 msgid "Sport"
-msgstr ""
+msgstr "Šport"
 
 #: templates/activities/view-all.html:26
 msgid "Dist"
-msgstr ""
+msgstr "Razdalja"
 
 #: templates/activities/view-all.html:27
 msgid "Elev"
-msgstr ""
+msgstr "Višinska razlika"
 
 #: templates/activities/view-all.html:30
 msgid "HR"
-msgstr ""
+msgstr "Srčni utrip"
 
 #: templates/activities/view-all.html:31
 msgid "Temp"
-msgstr ""
+msgstr "Temperatura"
 
 #: templates/activities/view-base.html:22
 msgid "Delete activity"
-msgstr ""
+msgstr "Izbriši aktivnost"
 
 #: templates/activities/view-base.html:23
 msgid "Edit activity"
-msgstr ""
+msgstr "Uredi aktivnost"
 
 #: templates/activities/view-base.html:29 templates/base/navbar_auth.html:6
 msgid "Overview"
-msgstr ""
+msgstr "Pregled"
 
 #: templates/activities/view-base.html:30
 msgid "Charts"
-msgstr ""
+msgstr "Grafi"
 
 #: templates/activities/view-base.html:31
 msgid "Zones"
-msgstr ""
+msgstr "Cone"
 
 #: templates/activities/view-base.html:32
 msgid "Splits"
-msgstr ""
+msgstr "Vmesni časi"
 
 #: templates/activities/view-base.html:33
 msgid "Big map"
-msgstr ""
+msgstr "Zemljevid"
 
 #: templates/activities/view.html:20
 msgid "Moving time"
-msgstr ""
+msgstr "Čas premikanja"
 
 #: templates/activities/view.html:24
 msgid "Pace"
-msgstr ""
+msgstr "Tempo"
 
 #: templates/activities/view.html:24
 msgid "Average speed"
-msgstr ""
+msgstr "Povprečna hitrost"
 
 #: templates/activities/view.html:29
 msgid "Elapsed time"
-msgstr ""
+msgstr "Trajanje"
 
 #: templates/activities/view.html:32
 msgid "Rest"
-msgstr ""
+msgstr "Počitek"
 
 #: templates/activities/view.html:35
 msgid "Elevation"
-msgstr ""
+msgstr "Višina"
 
 #: templates/activities/view.html:38
 msgid "Max. pace"
-msgstr ""
+msgstr "Najvišji tempo"
 
 #: templates/activities/view.html:42
 msgid "Avg. heart rate"
-msgstr ""
+msgstr "Povprečen srčni utrip"
 
 #: templates/activities/view.html:45
 msgid "Max. heart rate"
-msgstr ""
+msgstr "Najvišji srčni utrip"
 
 #: templates/activities/view.html:50
 msgid "Comments"
-msgstr ""
+msgstr "Komentarji"
 
 #: templates/base/navbar.html:27
 msgid "Log in"
-msgstr ""
+msgstr "Prijava"
 
 #: templates/base/user_menu.html:4
 msgid "Upload"
-msgstr ""
+msgstr "Naloži"
 
 #: templates/base/user_menu.html:12
 msgid "Settings"
-msgstr ""
+msgstr "Nastavitve"
 
 #: templates/base/user_menu.html:13
 msgid "Logout"
-msgstr ""
+msgstr "Odjava"
 
 #: templates/health/settings.html:9 templates/settings/_base.html:15
 msgid "Performance"
-msgstr ""
+msgstr "Učinkovitost"
 
 #: templates/health/settings.html:16
 msgid "Height"
-msgstr ""
+msgstr "Višina"
 
 #: templates/health/settings.html:27
 msgid "Max HR"
-msgstr ""
+msgstr "Najvišji srčni utrip"
 
 #: templates/health/settings.html:38
 msgid "LT HR"
-msgstr ""
+msgstr "Srčni utrip na laktalnem pragu"
 
 #: templates/presentation/index.html:27
 msgid "Track your training"
-msgstr ""
+msgstr "Spremljajte svoje treninge"
 
 #: templates/presentation/index.html:34
 msgid "Analyze your activities"
-msgstr ""
+msgstr "Analizirajte svoje aktivnosti"
 
 #: templates/presentation/index.html:41
 msgid "Acheive your goals"
-msgstr ""
+msgstr "Dosegajte svoje cilje"
 
 #: templates/presentation/index.html:48
 msgid "See your routes on the map"
-msgstr ""
+msgstr "Oglejte si svoje aktivnosti na zemljevidu"
 
 #: templates/presentation/index.html:65
 msgid "Features"
-msgstr ""
+msgstr "Značilnosti"
 
 #: templates/presentation/index.html:67
 msgid "Detailed breakdown of activities"
-msgstr ""
+msgstr "Natančen pregled aktivnost"
 
 #: templates/presentation/index.html:68
 msgid "Upload of FIT files from your device"
-msgstr ""
+msgstr "Naložite FIT daoteke, ki jih prenesete iz vaše naprave"
 
 #: templates/presentation/index.html:69
 msgid "Summaries for selected periods"
-msgstr ""
+msgstr "Pregled po posameznih obdobjih"
 
 #: templates/presentation/index.html:70
 msgid "Challenge yourself to reach your goals"
-msgstr ""
+msgstr "Motivirajte se za doseganje zastavljenih ciljev"
+
+#: templates/settings/_base.html:7
+msgid "Training :: Settings"
+msgstr "Trening :: Nastavitve"
 
 #: templates/settings/_base.html:14 templates/settings/me.html:10
 msgid "Me"
-msgstr ""
+msgstr "Jaz"
 
 #: templates/settings/_base.html:16
 msgid "Equipment"
-msgstr ""
+msgstr "Pripomočki"
 
 #: templates/settings/_base.html:17 templates/settings/account.html:11
 msgid "Account"
-msgstr ""
+msgstr "Račun"
 
 #: templates/settings/account.html:20
 msgid "Email"
-msgstr ""
+msgstr "E-pošta"
 
 #: templates/settings/account.html:30
 msgid "Password"
-msgstr ""
+msgstr "Geslo"
 
 #: templates/settings/account.html:32
 msgid "Current password"
-msgstr ""
+msgstr "Trenutno geslo"
 
 #: templates/settings/account.html:33
 msgid "New password"
-msgstr ""
+msgstr "Novo geslo"
 
 #: templates/settings/account.html:34
 msgid "Confirm new password"
-msgstr ""
+msgstr "Potrdite novo geslo"
 
 #: templates/settings/account.html:35
 msgid "Set password"
-msgstr ""
+msgstr "Nastavi geslo"
 
 #: templates/settings/account.html:39
 msgid "Invalid current password"
-msgstr ""
+msgstr "Nepravilno trenutno geslo"
 
 #: templates/settings/account.html:40
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Gesli se ne ujemata"
 
 #: templates/settings/account.html:46
 msgid "Units"
-msgstr ""
+msgstr "Enote"
 
 #: templates/settings/account.html:49
 msgid "Metric"
-msgstr ""
+msgstr "Metrični sistem"
 
 #: templates/settings/account.html:50
 msgid "Imperial"
-msgstr ""
+msgstr "Imperialni sistem"
 
 #: templates/settings/equipment.html:10
 msgid "Bikes"
-msgstr ""
+msgstr "Kolesa"
 
 #: templates/settings/equipment.html:32
 msgid "Shoes"
-msgstr ""
+msgstr "Čevlji"
 
 #: templates/settings/equipment.html:54
 msgid "Other"
-msgstr ""
+msgstr "Ostalo"
 
 #: templates/settings/me.html:16
 msgid "Name"
-msgstr ""
+msgstr "Ime"
 
 #: templates/settings/me.html:26
 msgid "Gender"
-msgstr ""
+msgstr "Spol"
 
 #: templates/settings/me.html:29
 msgid "Female"
-msgstr ""
+msgstr "Ženski"
 
 #: templates/settings/me.html:30
 msgid "Male"
-msgstr ""
+msgstr "Moški"
 
 #: templates/settings/me.html:31
 msgid "I don't want to tell"
-msgstr ""
+msgstr "Ne želim povedati"
 
 #: templates/settings/me.html:42
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: templates/socialaccount/signup.html:15
 #, python-format
@@ -847,43 +864,45 @@ msgid ""
 "You are about to use your %(provider_name)s account to login to\n"
 "      %(site_name)s. As a final step, please complete the following form:"
 msgstr ""
+"Za prijavo na %(site_name)s boste uporabili vaš račun %(provider_name)s \n"
+".Kot zadnji korak izpolnite naslednji obrazec:"
 
 #: training/settings.py:137
 msgid "English"
-msgstr ""
+msgstr "Angleški"
 
 #: training/settings.py:138
 msgid "Slovene"
-msgstr ""
+msgstr "Slovenski"
 
 #: user_settings/models.py:14
 msgid "unknown"
-msgstr ""
+msgstr "neznan"
 
 #: user_settings/models.py:15
 msgid "male"
-msgstr ""
+msgstr "moški"
 
 #: user_settings/models.py:16
 msgid "female"
-msgstr ""
+msgstr "ženski"
 
 #: user_settings/models.py:19
 msgid "Metric (kilometers, kilograms)"
-msgstr ""
+msgstr "Metrični (kilometri, kilogrami)"
 
 #: user_settings/models.py:20
 msgid "Imperial (miles, pounds)"
-msgstr ""
+msgstr "Imperialni (milije, unče)"
 
 #: user_settings/models.py:25
 msgid "gender"
-msgstr ""
+msgstr "spol"
 
 #: user_settings/models.py:26
 msgid "units"
-msgstr ""
+msgstr "enote"
 
 #: user_settings/models.py:28
 msgid "avatar"
-msgstr ""
+msgstr "avatar"
