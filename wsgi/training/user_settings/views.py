@@ -14,16 +14,22 @@ from activities.models import Equipment
 
 @login_required
 def index(request):
+    """Renders the settings' index page."""
+
     return render_to_response('settings/index.html', context_instance=RequestContext(request))
 
 
 @login_required
 def about(request):
+    """Renders the About form."""
+
     return render_to_response('settings/me.html', context_instance=RequestContext(request))
 
 
 @login_required
 def equipment(request):
+    """Renders the list of all equipment."""
+
     template = {
         'other': Equipment.objects.filter(user=request.user, sport=-1),
         'bike': Equipment.objects.filter(user=request.user, sport=0),
@@ -35,12 +41,19 @@ def equipment(request):
 
 @login_required
 def account(request):
+    """Renders the account settings."""
+
     return render_to_response('settings/account.html', context_instance=RequestContext(request))
 
 
 @require_http_methods(['PUT'])
 @login_required
 def settings_save(request, key):
+    """Saves the sent data to database.
+    Arguments:
+        key: target column
+    """
+
     def __get_gender(value):
         if value == 'male':
             return True
@@ -135,6 +148,8 @@ def settings_save(request, key):
 @require_http_methods(['POST'])
 @login_required
 def avatar_save(request):
+    """Uploads the avatar."""
+
     try:
         request.user.details.avatar = request.FILES['avatar']
         request.user.details.save()
@@ -147,7 +162,8 @@ def avatar_save(request):
 @login_required
 @csrf_protect
 def equipment_add(request, type_, id_=None):
-    type_to_id = {'other': -1, 'bike': 0, 'shoe': 1}
+    """Adds an equipment."""
+
     template = {}
 
     if request.method == 'POST':

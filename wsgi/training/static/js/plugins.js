@@ -676,7 +676,7 @@ bestSplitSpeed = function(time, distance, interval, interval_time) {
     c_dist += distance[i + start];
     delta += c;
     if (delta > interval) {
-      best = Math.max(round_(c_dist / c_time / 100 * 3.6, 1), best);
+      best = Math.max(round_(c_dist / c_time / 100, 1), best);
       while (delta > interval) {
         c_time -= time[j];
         c_dist -= distance[j];
@@ -738,7 +738,7 @@ changeSummary = function() {
           results.push($("#" + target).text(formatDistance(value)));
           break;
         case 'max_speed':
-          results.push($("#" + target).text(formatSpeed(value / 3.6)));
+          results.push($("#" + target).text(formatSpeed(value / 360)));
           break;
         case 'avg_speed':
           results.push($("#" + target).text(formatSpeed(value)));
@@ -869,6 +869,12 @@ $(function() {
       return e.preventDefault();
     }
   });
+  if ($('#id_date').length) {
+    new Pikaday({
+      field: $('#id_date')[0],
+      format: 'YYYY-MM-DD'
+    });
+  }
   if ($('#map').length) {
     $.getJSON("/activities/api/map/" + id, function(json) {
       return createMap(json);

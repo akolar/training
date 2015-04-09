@@ -14,7 +14,6 @@ from django.db.models import Sum, Count, Max, Avg
 
 from activities.forms import UploadForm, EditForm, ManualUploadForm
 from activities.models import Activity
-from utils.helpers import average_values
 
 
 ORDER_KEYS = {
@@ -32,6 +31,8 @@ ORDER_KEYS = {
 
 
 def handle_uploads(files):
+    """Uploads the file to server and returns path of uploaded file."""
+
     saved = {}
 
     upload_full_path = os.path.join(settings.MEDIA_ROOT, 'fit_files')
@@ -54,6 +55,8 @@ def handle_uploads(files):
 @login_required
 @require_http_methods(['GET', 'POST'])
 def upload(request):
+    """Renders the upload form and handles the upload of files."""
+
     template = {}
 
     if request.method == 'POST':
@@ -79,6 +82,8 @@ def upload(request):
 @login_required
 @require_http_methods(['GET', 'POST'])
 def manual_entry(request):
+    """Renders the form for manual uploads and handles resposes."""
+
     template = {}
 
     if request.method == 'POST':
@@ -104,6 +109,11 @@ def manual_entry(request):
 @login_required
 @require_http_methods(['GET', 'POST'])
 def edit(request, id_):
+    """Renders the form for editing existing activities and handles received responses.
+    Arguments:
+        id_: id of the activity
+    """
+
     activity = Activity.objects.get(user=request.user, id=id_)
     template = {'activity': activity}
 
@@ -123,20 +133,22 @@ def edit(request, id_):
 
 @login_required
 def delete(request, id_):
+    """Deletes an activity from server.
+    Arguments:
+        id_: id of the activity
+    """
+
     Activity.objects.get(user=request.user, id=id_).delete()
     return redirect('activities:view-all')
 
 
-def to_time(delta):
-    times = delta[:]
-    for i in range(1, len(times)):
-        times[i] += times[i - 1]
-
-    return times
-
-
 @login_required
 def view(request, id_):
+    """Renders the activity with given id.
+    Arguments:
+        id_: id of the activity
+    """
+
     activity = get_object_or_404(Activity, pk=id_, user=request.user)
 
     template = {
@@ -166,7 +178,8 @@ def _summarize(activities, si_units=True):
 
 @login_required
 def overview(request):
-    activities = Activity.objects.filter(user=request.user).order_by('-id')
+    """Renders the overview of all activities."""
+
     now_ = now()
 
     start = now_ - timedelta(days=(now_.weekday() + 21))
@@ -197,7 +210,7 @@ def overview(request):
     ach_year = (Activity.objects.filter(date__gte=year_start, user=request.user)
                                 .aggregate(distance=Sum('total_distance'), time=Sum('moving')))
     ach_month = (Activity.objects.filter(date__gte=month_start, user=request.user)
-                                .aggregate(distance=Sum('total_distance'), time=Sum('moving')))
+                                 .aggregate(distance=Sum('total_distance'), time=Sum('moving')))
     ach_week = (Activity.objects.filter(date__gte=week_start, user=request.user)
                                 .aggregate(distance=Sum('total_distance'), time=Sum('moving')))
 
@@ -228,14 +241,18 @@ def overview(request):
 @login_required
 @csrf_protect
 def summary(request):
-    activities = Activity.objects.filter(user=request.user)
-    template = {}
+    """Renders the summary of all activities."""
 
-    return render(request, 'activities/summary.html', template)
+    return render(request, 'activities/summary.html', {})
 
 
 @login_required
 def charts(request, id_):
+    """Renders charts for given activity.
+    Arguments:
+        id_: id of the activity
+    """
+
     activity = get_object_or_404(Activity, pk=id_, user=request.user)
 
     template = {
@@ -247,6 +264,11 @@ def charts(request, id_):
 
 @login_required
 def zones(request, id_):
+    """Renders zones for given activity.
+    Arguments:
+        id_: id of the activity
+    """
+
     activity = get_object_or_404(Activity, pk=id_, user=request.user)
 
     template = {
@@ -258,6 +280,11 @@ def zones(request, id_):
 
 @login_required
 def splits(request, id_):
+    """Renders splits for given activity.
+    Arguments:
+        id_: id of the activity
+    """
+
     activity = get_object_or_404(Activity, pk=id_, user=request.user)
 
     template = {
@@ -269,6 +296,11 @@ def splits(request, id_):
 
 @login_required
 def map_(request, id_):
+    """Renders the big map for given activity.
+    Arguments:
+        id_: id of the activity
+    """
+
     activity = get_object_or_404(Activity, pk=id_, user=request.user)
 
     template = {
@@ -280,6 +312,14 @@ def map_(request, id_):
 
 @login_required
 def view_all(request, key='date', inverted='', page=1, status=None):
+    """Displays all activity the user has uploaded.
+    Arguments:
+        key: column used for sorting of data
+        inverted: invert the default ASC?DESC selection
+        page: selected page; must be in range [1..n], where n <= (total activities / 30)
+        status: upload status; only when redirected from upload page
+    """
+
     inv_ = bool(inverted)
     key = ORDER_KEYS[key]
     order_key = key if not inverted else '-' + key.replace('-', '')
@@ -304,12 +344,16 @@ def view_all(request, key='date', inverted='', page=1, status=None):
 
 @login_required
 def ochart(request, id_):
+    """Returns JSON data for the overview chart.
+    Arguments:
+        id_: id of the activity
+    """
+
     activity = get_object_or_404(Activity, pk=id_, user=request.user)
     distances, d_units = activity.get_distances()
     elevations, e_units = activity.get_elevations()
     speeds, s_units = activity.get_speeds()
     avg_speeds = _average_values(speeds)
-
 
     json = [
         zip(distances, elevations),
@@ -321,6 +365,11 @@ def ochart(request, id_):
 
 @login_required
 def map_data(request, id_):
+    """Returns JSON data for map display.
+    Arguments:
+        id_: id of the activity
+    """
+
     activity = get_object_or_404(Activity, pk=id_, user=request.user)
 
     return JsonResponse(zip(activity.track.x, activity.track.y), safe=False)
@@ -328,6 +377,12 @@ def map_data(request, id_):
 
 @login_required
 def chart_data(request, id_, data_type):
+    """Returns JSON object for the display of all detailed charts
+    Arguments:
+        id_: id of the activity
+        data_type: column for which data should be summarized
+    ."""
+
     if data_type not in ['speed', 'elevation', 'hr', 'cadence', 'temperature', 'grade']:
         raise Http404()
 
@@ -354,6 +409,12 @@ def chart_data(request, id_, data_type):
 
 @login_required
 def zones_data(request, id_, data_type):
+    """Returns JSON data for the display of zones.
+    Arguments:
+        id_: id of the activity
+        data_type: column for which data should be summarized
+    """
+
     if data_type not in ['speed', 'elevation', 'hr', 'cadence', 'temperature', 'grade']:
         raise Http404()
 
@@ -382,6 +443,11 @@ def zones_data(request, id_, data_type):
 
 @login_required
 def track(request, id_):
+    """Returns JSON with all track points.
+    Arguments:
+        id_: id of the activity
+    """
+
     activity = get_object_or_404(Activity, pk=id_, user=request.user)
 
     return JsonResponse({'distance': activity.distance, 'time': activity.time,
@@ -391,6 +457,11 @@ def track(request, id_):
 
 @login_required
 def period_summary(request, period):
+    """Returns JSON containing summarized data for given period.
+    Arguments:
+        period: period in ['week', 'month', 'year']
+    """
+
     end = now()
     end_midnight = end - timedelta(hours=end.hour, minutes=end.minute, seconds=end.second)
 
@@ -403,16 +474,16 @@ def period_summary(request, period):
 
     qs = Activity.objects.filter(date__range=[start, end], user=request.user)
     summary = qs.aggregate(
-                           n_activities=Count('id'),
-                           longest=Max('moving'),
-                           avg_duration=Avg('moving'),
-                           total_time=Sum('moving'),
-                           farthest=Max('total_distance'),
-                           avg_distance=Avg('total_distance'),
-                           total_distance=Sum('total_distance'),
-                           max_speed=Max('speed_max'),
-                           elev_gain=Sum('elevation_gain'),
-                           avg_rpe=Avg('rating')
+        n_activities=Count('id'),
+        longest=Max('moving'),
+        avg_duration=Avg('moving'),
+        total_time=Sum('moving'),
+        farthest=Max('total_distance'),
+        avg_distance=Avg('total_distance'),
+        total_distance=Sum('total_distance'),
+        max_speed=Max('speed_max'),
+        elev_gain=Sum('elevation_gain'),
+        avg_rpe=Avg('rating')
     )
 
     n_rides = Activity.objects.filter(date__range=[start, end], user=request.user, sport=0).count()
@@ -427,6 +498,7 @@ def period_summary(request, period):
 
 @login_required
 def week_chart(request):
+    """Returns JSON data for creation of the weekly chart."""
     now_ = now().replace(hour=0, minute=0, second=0)
     start = now_ - timedelta(days=now_.weekday() + 7 * 12)  # 12 weeks
     activities = Activity.objects.filter(date__gte=start, user=request.user).order_by('date')
@@ -454,6 +526,7 @@ def _summarize_by_period(activities, start, period=7):
         data['n'][-1] += 1
 
     return data
+
 
 def __get_pagination_indexes(n_pages, current):
     if n_pages < 10:

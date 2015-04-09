@@ -6,6 +6,8 @@ from django.utils.translation import ugettext as _
 
 
 class Goals(models.Model):
+    """Object containing data about goals user has created for himself."""
+
     user = models.OneToOneField(User)
 
     weekly_distance = models.IntegerField(_('weekly goal (distance)'), default=0)
@@ -18,6 +20,12 @@ class Goals(models.Model):
     yearly_time = models.IntegerField(_('yearly goal (time)'), default=0)
 
     def weekly_progress(self, distance=0, time=0):
+        """Returns weekly progress percentage.
+        Arguments:
+            distance: completed distance
+            time: time spent
+        """
+
         if distance is None:
             distance = 0
         if time is None:
@@ -29,6 +37,12 @@ class Goals(models.Model):
         return int(round(min(dist_progress, time_progress) * 100, 0))
 
     def monthly_progress(self, distance=0, time=0):
+        """Returns monthly progress percentage.
+        Arguments:
+            distance: completed distance
+            time: time spent
+        """
+
         if distance is None:
             distance = 0
         if time is None:
@@ -40,6 +54,12 @@ class Goals(models.Model):
         return int(round(min(dist_progress, time_progress) * 100, 0))
 
     def yearly_progress(self, distance=0, time=0):
+        """Returns yearly progress percentage.
+        Arguments:
+            distance: completed distance
+            time: time spent
+        """
+
         if distance is None:
             distance = 0
         if time is None:
@@ -51,19 +71,29 @@ class Goals(models.Model):
         return int(round(min(dist_progress, time_progress) * 100, 0))
 
     def has_weekly(self):
+        """User has an active weekly goal."""
+
         return self.weekly_time or self.weekly_distance
 
     def has_monthly(self):
+        """User has an active monthly goal."""
+
         return self.monthly_time or self.monthly_distance
 
     def has_yearly(self):
+        """User has an active yearly goal."""
+
         return self.yearly_time or self.yearly_distance
 
     def has_any(self):
+        """User has active goals."""
+
         return self.has_weekly() or self.has_monthly() or self.has_yearly()
 
 
 @receiver(post_save, sender=User)
 def create_related(sender, **kwargs):
+    """Creates Goals object upon the creation of an user."""
+
     if kwargs.get('created', False):
         Goals.objects.get_or_create(user=kwargs.get('instance'))

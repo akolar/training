@@ -1,7 +1,7 @@
 {% load active from nav %}
 {% load i18n %}
 
-<li><a href="{% url 'activities:upload' %}">Upload</a></li>
+<li><a href="{% url 'activities:upload' %}">{% trans 'Upload' %}</a></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
     {% if request.user.first_name %}{{ request.user.first_name }}{% else %}{{ request.user.email }}{% endif %}

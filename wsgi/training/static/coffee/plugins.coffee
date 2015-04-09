@@ -499,7 +499,7 @@ bestSplitSpeed = (time, distance, interval, interval_time=true) ->
         delta += c
 
         if delta > interval
-            best = Math.max(round_(c_dist / c_time / 100 * 3.6, 1), best)
+            best = Math.max(round_(c_dist / c_time / 100, 1), best)
 
             while delta > interval
                 c_time -= time[j]
@@ -540,7 +540,7 @@ changeSummary = () ->
                 when 'farthest' then $("##{target}").text formatDistance value
                 when 'total_distance' then $("##{target}").text formatDistance value
                 when 'avg_distance' then $("##{target}").text formatDistance value
-                when 'max_speed' then $("##{target}").text formatSpeed value / 3.6
+                when 'max_speed' then $("##{target}").text formatSpeed value / 360
                 when 'avg_speed' then $("##{target}").text formatSpeed value
                 when 'elev_gain' then $("##{target}").text formatShortDistance value
                 else $("##{target}").text if value != null then value else 0
@@ -635,6 +635,10 @@ $ ->
         if not confirm 'Are you sure you want to delete this activity?'
             do e.preventDefault
 
+    if $('#id_date').length
+        new Pikaday
+            field: $('#id_date')[0]
+            format: 'YYYY-MM-DD'
 
     if $('#map').length
         $.getJSON "/activities/api/map/#{id}", (json) ->

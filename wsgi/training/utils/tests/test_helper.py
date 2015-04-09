@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from utils.helpers import *
+from utils.helpers import *  # noqa
 
 
 class HelperTest(TestCase):

@@ -1,6 +1,5 @@
 from datetime import time
 from django import template
-from django.core import urlresolvers
 
 from utils.helpers import average, CONVERT_KM_MILE
 from activities import ureg
@@ -32,6 +31,13 @@ def __convert(value):
 
 @register.simple_tag
 def average_values(values, devide_by=1, avg_range=10, precision=2):
+    """Averages values in specified range.
+    Arguments:
+        devide_by: devide each value by this numbers
+        avg_range: number of previous values to average from
+        precision: number of decimal places
+    """
+
     if devide_by != 1:
         values = map(lambda x: float(x) / devide_by, values)
 
@@ -44,17 +50,28 @@ def average_values(values, devide_by=1, avg_range=10, precision=2):
 
 @register.simple_tag(takes_context=True)
 def units(context, value, precision=0):
+    """Formats the pint object to string with units.
+    Arguments:
+        value: pint object
+        precision: number of decimal places
+    """
+
     if not value:
         return 'n/a'
 
     if not context['request'].user.details.si_units:
-       value = __convert(value)
+        value = __convert(value)
 
     return '{{:.0{}f~}}'.format(precision).format(value)
 
 
 @register.simple_tag(takes_context=True)
 def pace(context, value):
+    """Formats the number to appropriate pace format.
+    Arguments:
+        value: pace
+    """
+
     if not context['request'].user.details.si_units:
         value = __convert(value)
 
@@ -63,9 +80,16 @@ def pace(context, value):
 
 @register.filter
 def fahrenheit(value):
+    """Converts temperature to fahrenheit.
+    Arguments:
+        value: temperature in degrees celcius
+    """
+
     return '{:~}'.format(value.to(ureg.fahrenheit))
 
 
 @register.simple_tag(takes_context=True)
 def per_km(context):
+    """Returns selected distance value."""
+
     return 'km' if context['request'].user.details.si_units else 'mi'

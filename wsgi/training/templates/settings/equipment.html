@@ -3,11 +3,10 @@
 {% load i18n %}
 {% load url from future %}
 
-{% block block_title %}Training :: Settings{% endblock block_title %}
 
 {% block settings %}
   <a href="{% url 'settings:equipment_add' 'bike' %}" class="btn pull-right">+</a>
-  <h3>Bikes</h3>
+  <h3>{% trans 'Bikes' %}</h3>
   <table class="table">
     <thead>
       <th></th>
@@ -29,7 +28,7 @@
   </table>
 
   <a href="{% url 'settings:equipment_add' 'shoes' %}" class="btn pull-right">+</a>
-  <h3>Shoes</h3>
+  <h3>{% trans 'Shoes' %}</h3>
   <table class="table">
     <thead>
       <th></th>
@@ -51,7 +50,7 @@
   </table>
 
   <a href="{% url 'settings:equipment_add' 'other' %}" class="btn pull-right">+</a>
-  <h3>Other</h3>
+  <h3>{% trans 'Other' %}</h3>
   <table class="table">
     <thead>
       <th></th>

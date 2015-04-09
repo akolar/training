@@ -10,6 +10,8 @@ def _avatar_path(instance, filename):
 
 
 class Details(models.Model):
+    """Stores the data about user which can't be stored anywhere else."""
+
     GENDER_CHOICES = (
         (None, _('unknown')),
         (True, _('male')),
@@ -30,5 +32,7 @@ class Details(models.Model):
 
 @receiver(post_save, sender=User)
 def create_related(sender, **kwargs):
+    """Creates Details object upon the creation of an user."""
+
     if kwargs.get('created', False):
         Details.objects.get_or_create(user=kwargs.get('instance'))

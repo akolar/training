@@ -1,4 +1,3 @@
-import json
 import math
 
 from django.contrib.gis.geos import LineString
@@ -108,7 +107,7 @@ class Track(object):
 
     def average_heart_rate(self):
         if 'average_hr' not in self.__cache:
-            valid_hr = [hr for hr in self.heart_rate if hr != None]
+            valid_hr = [hr for hr in self.heart_rate if hr is not None]
             self.__cache['average_hr'] = int(round(sum(valid_hr) / float(len(valid_hr)), 0)) if len(valid_hr) else 0
 
         return self.__cache['average_hr']
@@ -148,7 +147,7 @@ class Track(object):
         return data
 
     def heart_rate_zones(self):
-        valid_hr = [hr for hr in self.heart_rate if hr != None]
+        valid_hr = [hr for hr in self.heart_rate if hr is not None]
 
         data = {}
         for hr in valid_hr:

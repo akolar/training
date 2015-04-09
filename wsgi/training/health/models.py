@@ -6,6 +6,8 @@ from django.dispatch import receiver
 
 
 class Athlete(models.Model):
+    """Object storing user's fitness-related data."""
+
     user = models.OneToOneField(User)
 
     resting_hr = models.IntegerField(_('resting hear rate'), null=True, blank=True)
@@ -20,5 +22,7 @@ class Athlete(models.Model):
 
 @receiver(post_save, sender=User)
 def create_related(sender, **kwargs):
+    """Creates Athlete object upon the creation of an user."""
+
     if kwargs.get('created', False):
         Athlete.objects.get_or_create(user=kwargs.get('instance'))

@@ -5,5 +5,7 @@ from django.template import RequestContext
 
 @login_required()
 def settings(request):
+    """Renders the settings page."""
+
     template = RequestContext(request)
     return render_to_response('health/settings.html', template)

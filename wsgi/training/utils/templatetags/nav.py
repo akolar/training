@@ -7,6 +7,8 @@ register = template.Library()
 
 @register.simple_tag(takes_context=True)
 def active(context, *args):
+    """Returns 'active' if passed page is open."""
+
     matches = _current_url_equals(context, *args)
     return ' active' if matches else ''
 
@@ -21,5 +23,3 @@ def _current_url_equals(context, *args):
             pass
 
     return False
-
-

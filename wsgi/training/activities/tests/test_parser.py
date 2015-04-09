@@ -8,6 +8,7 @@ from activities.parser import *
 
 
 class TrackTest(TestCase):
+
     _created_at = datetime(2014, 9, 21, 06, 44, 06)
     _started_at = copy.deepcopy(_created_at)
     _paused_at = [datetime(2014, 9, 21, 7, 12, 25), datetime(2014, 9, 21, 7, 37, 18), datetime(2014, 9, 21, 8, 57, 43)]
@@ -115,6 +116,7 @@ class TrackTest(TestCase):
 
     def test_temperature_entries(self):
         self.assertIsNone(self.track.temperature_entries())
+
 
 class ParserTest(TestCase):
 

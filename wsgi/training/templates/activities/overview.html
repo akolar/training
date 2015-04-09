@@ -15,7 +15,7 @@
 {% block content %}
   <div class="row">
     <div class="col-lg-9">
-      <h3>Recent activities</h3>
+      <h3>{% trans 'Recent activities' %}</h3>
 
       <table class="table table-striped table-condensed table-bordered week-view">
         {% for week in weekly %}
@@ -43,11 +43,11 @@
         {% endfor %}
       </table>
 
-      <a href="{% url 'activities:view-all' %}">View more &rarr;</a>
+      <a href="{% url 'activities:view-all' %}">{% trans 'View more' %} &rarr;</a>
     </div>
 
     <div class="col-lg-3">
-      <h3>Goals</h3>
+      <h3>{% trans 'Goals' %}</h3>
       {% if request.user.goals.has_any %}
         {% if request.user.goals.has_weekly %}
           <div class="progress">
