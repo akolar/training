@@ -18,12 +18,6 @@
     <li role="presentation" class="divider"></li>
 
     <li role="presentation" class="dropdown-header">{% trans 'Language' %}</li>
-    {% for lang_code, lang_name in languages %}
-      {% language lang_code %}
-      <li>
-        <a href="{% url 'settings:set-lang' lang_code %}">{{ lang_name }}</a>
-      </li>
-      {% endlanguage %}
-    {% endfor %}
+    {% include "base/lang-menu.html" %}
   </ul>
 </li>
