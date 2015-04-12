@@ -510,7 +510,7 @@ def week_chart(request):
 
 def _summarize_by_period(activities, start, period=7):
     max_ = start + timedelta(days=period)
-    data = {'distance': [], 'time': [], 'rating': [], 'n': []}
+    data = {'distance': [0], 'time': [0], 'rating': [0], 'n': [0]}
 
     for activity in activities:
         if activity.date > max_:
